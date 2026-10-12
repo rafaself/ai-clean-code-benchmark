@@ -1,6 +1,6 @@
 # Project selection and verified evidence
 
-Source/configuration review performed on **2026-10-12** using public GitHub repository metadata, commit-pinned trees, and file contents. Counts below describe repository files, not passing tests or measured coverage. No project was installed or executed in this phase.
+Source/configuration review performed on **2026-10-12** using public GitHub repository metadata, commit-pinned trees, and file contents. Counts below describe repository files, not passing tests or measured coverage. No project was installed or executed during that foundation review. Subsequent local setup/build/test evidence is recorded separately in the [preparation report](../experiments/srp/preparation/README.md).
 
 ## Candidate comparison
 

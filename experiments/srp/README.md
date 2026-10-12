@@ -1,6 +1,6 @@
 # SRP exploratory experiment
 
-**Status: specification only.** No subject source, refactoring, acceptance harness, benchmark sessions, or results are included. This directory describes future preparation and execution.
+**Status: prepared locally; benchmark execution has not started.** The [preparation report](preparation/README.md) records the frozen oracle, validated decomposition, source patch, execution manifest, and remaining live-provider readiness check. The task contracts below remain prospective; validation counts are not agent outcomes.
 
 ## Design and treatment
 
@@ -32,7 +32,7 @@ These are new change requests grounded in inspected code. They are not claims of
 | T04 | Creation-date sorting | Add `CREATED_ASC` to the team-collection sorting contract, ordered by `createdOn` ascending, then ID ascending, assigning contiguous sibling indices. Cover roots/children, equal timestamps, empty lists, and team/parent isolation. Preserve existing title-sort behavior, error behavior, and transaction semantics. The shared `SortOptions` type has other consumers; record the interface effect and regression-check their existing options rather than adding unrelated functionality. |
 | T05 | Search relevance ordering | Rank matches by descending PostgreSQL similarity within each existing result group, then ascending ID for equal scores. Keep collection results followed by request results, existing pagination semantics per group, matching/escaping behavior, returned ancestry, and team isolation. Cover exact/partial matches, equal scores, multiple pages, no matches, and multiple teams using real PostgreSQL with `pg_trgm`. Do not introduce global mixed-type ranking or a new pagination API. |
 
-For T03, a nonempty name means string length greater than zero; trimming or normalization is not part of this task. Unknown metadata remains permitted, and existing handling of optional collection data is outside the validation change. Freeze simultaneous-invalid-input error precedence before execution as part of the concrete prompt/oracle, preserving existing ownership behavior for structurally valid inputs.
+For T03, a nonempty name means string length greater than zero; trimming or normalization is not part of this task. Unknown metadata remains permitted, and existing handling of optional collection data is outside the validation change. Structural invalidity takes precedence over parent lookup when both are invalid, as frozen in amendment 001 and the concrete prompt/oracle. Existing ownership behavior for structurally valid inputs is preserved.
 
 For all tasks, include negative cases and unchanged behavior alongside positive acceptance. The independent evaluator must observe returned values, database state, and relevant events rather than require a specific extraction or patch style. Existing upstream tests remain a separate unchanged regression check. If task feasibility or those checks conflict, amend the prospective contract before collecting outcomes; do not silently weaken scoring.
 
@@ -46,12 +46,13 @@ An exploratory effectiveness signal is a 20 percentage-point increase in B's com
 
 ## Next phase checklist
 
-- [ ] Reproduce the pinned backend setup, tests, build, and relevant endpoints.
-- [ ] Establish immutable independent acceptance fixtures and database-backed regressions.
-- [ ] Freeze concrete prompts and verify unmet new requirements on A.
-- [ ] Prepare and review B with a responsibility map and structural inventory.
-- [ ] Validate A/B equivalence and unmet task requirements on both starts.
-- [ ] Freeze model/CLI/environment identities, instructions, telemetry, schedule, and protocol revision.
-- [ ] Verify budgets and measurement feasibility without running benchmark tasks as calibration.
+- [x] Reproduce the pinned backend setup, tests, build, and relevant endpoints.
+- [x] Establish immutable independent acceptance fixtures and database-backed regressions.
+- [x] Freeze concrete prompts and verify unmet new requirements on A.
+- [x] Prepare and review B with a responsibility map and structural inventory.
+- [x] Validate A/B equivalence and unmet task requirements on both starts.
+- [x] Freeze model/CLI/environment identities, instructions, telemetry, schedule, and protocol revision.
+- [x] Verify local grading duration, parser fixtures, isolation probes, and positive-control sensitivity without running agent benchmark tasks.
+- [ ] Verify live authenticated inference and token semantics with a non-benchmark instrumentation prompt before launch.
 
 Only a subsequent phase executes the measured sessions. Later evidence will link back to the frozen manifest and include all attempts and sanitized artifacts. No numeric results or placeholder outcomes belong in this foundation.

@@ -2,7 +2,7 @@
 
 An exploratory research project investigating whether established software engineering practices help AI coding agents maintain existing software. The initial study evaluates the Single Responsibility Principle (SRP) using OpenAI Codex. Benefits, costs, and no improvement are all possible outcomes.
 
-**Status: research foundation only.** No benchmark sessions have been executed, no results exist, and no subject code or SRP refactoring is included. The protocol below specifies proposed experiments; execution depends on the preparation gates in the methodology.
+**Status: prepared locally; benchmark not executed.** The initial research foundation is followed by a frozen oracle, validated SRP patch, and execution configuration. No Codex maintenance outcomes or benchmark results exist. See the [preparation report](experiments/srp/preparation/README.md) for checks, artifacts, and the remaining live-provider readiness check.
 
 ## Research question
 
@@ -34,11 +34,11 @@ These thresholds are exploratory practical signals, not significance tests. Five
 | [Limitations](docs/limitations.md) | Biases, confounding variables, validity threats, and unresolved risks. |
 | [SRP experiment specification](experiments/srp/README.md) | Responsibility boundaries and the five proposed task contracts. |
 
-## Next phase
+## Preparation and next phase
 
-Establish reproducible setup, develop independent acceptance and regression tests, prepare Variant B without implementing any benchmark task, validate functional equivalence, and freeze the execution manifest. Check that both starting variants fail each task's new acceptance requirements while passing the unchanged regression checks. Benchmark execution is a separate subsequent phase.
+Reproducible setup, independent acceptance/regression tests, Variant B, and the execution manifest are prepared and validated locally. A/B builds and all 761 unchanged unit tests pass; their 13 independent regression cases and unmet task requirements match. The GraphQL schema and tested HTTP contracts match. A private positive control validates the acceptance oracle.
 
-Source and configuration inspection has been performed. Dependency installation, application startup, builds, and subject tests have **not** been performed in this phase. No runner or executable benchmark infrastructure is provided.
+The original broken e2e scaffold remains unchanged and is disclosed in [amendment 001](experiments/srp/preparation/amendment-001.md). Software validation is not benchmark evidence. Complete the live authentication/telemetry readiness check without using benchmark tasks, then run the frozen schedule only in a separately authorized execution phase. A single-session driver fails closed without its explicit execution switch.
 
 ## Future organization
 

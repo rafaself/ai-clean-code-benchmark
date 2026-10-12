@@ -1,0 +1,56 @@
+# Fill inputs with freshly staged snapshots and private control files; no service starts by default.
+services:
+  database:
+    image: postgres@sha256:d4a8e1f88f475ee3e0137fa89d21ebc59f6c6ab16bf369ee92907607cc3455ae
+    network_mode: none
+    environment:
+      POSTGRES_DB: benchmark
+      POSTGRES_USER: benchmark
+      POSTGRES_PASSWORD: benchmark
+    volumes:
+      - database-socket:/var/run/postgresql
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U benchmark -d benchmark && mkdir -p /var/run/postgresql/.git /var/run/postgresql/.codex /var/run/postgresql/.agents"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+    mem_limit: 1g
+  model-gateway:
+    image: ${BENCHMARK_RUNTIME_IMAGE:?use the immutable image from execution-manifest.json}
+    command: [node, /gateway/model-gateway.cjs]
+    environment:
+      BENCHMARK_DRIVER_TOKEN_FILE: /control/driver-token
+      UPSTREAM_AUTH_FILE: /credentials/auth.json
+    volumes:
+      - ../tools/model-gateway.cjs:/gateway/model-gateway.cjs:ro
+      - ${BENCHMARK_CONTROL:?private per-session control directory}:/control:ro
+      - ${BENCHMARK_AUTH_FILE:?private upstream credentials file}:/credentials/auth.json:ro
+    networks: [session, gateway-egress]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+  agent:
+    image: ${BENCHMARK_RUNTIME_IMAGE:?use the immutable image from execution-manifest.json}
+    command: [node, /control/session-driver.cjs]
+    working_dir: /workspace/packages/hoppscotch-backend
+    env_file: [agent-runtime.env]
+    volumes:
+      - ${BENCHMARK_WORKSPACE:?fresh sanitized subject snapshot}:/workspace
+      - ${BENCHMARK_CONTROL:?private per-session control directory}:/control
+      - ./codex.toml:/home/node/.codex/config.toml:ro
+      - database-socket:/db-socket
+    networks: [session]
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+      - seccomp:${BENCHMARK_SECCOMP_FILE:?absolute frozen seccomp profile path}
+    cpus: 2
+    mem_limit: 4g
+    memswap_limit: 4g
+    pids_limit: 256
+networks:
+  session:
+    internal: true
+  gateway-egress: {}
+volumes:
+  database-socket: {}

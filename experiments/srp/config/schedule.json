@@ -1,0 +1,216 @@
+{
+  "seed": "srp-v1-2026-10-12",
+  "algorithm": "SHA256(seed:block:task:repetition) lexical block sort; first byte of SHA256(seed:order:task:repetition) parity selects AB or BA",
+  "sessions": [
+    {
+      "position": 1,
+      "task": "T05",
+      "repetition": 3,
+      "variant": "A",
+      "id": "T05-3-A"
+    },
+    {
+      "position": 2,
+      "task": "T05",
+      "repetition": 3,
+      "variant": "B",
+      "id": "T05-3-B"
+    },
+    {
+      "position": 3,
+      "task": "T04",
+      "repetition": 1,
+      "variant": "A",
+      "id": "T04-1-A"
+    },
+    {
+      "position": 4,
+      "task": "T04",
+      "repetition": 1,
+      "variant": "B",
+      "id": "T04-1-B"
+    },
+    {
+      "position": 5,
+      "task": "T01",
+      "repetition": 3,
+      "variant": "B",
+      "id": "T01-3-B"
+    },
+    {
+      "position": 6,
+      "task": "T01",
+      "repetition": 3,
+      "variant": "A",
+      "id": "T01-3-A"
+    },
+    {
+      "position": 7,
+      "task": "T03",
+      "repetition": 3,
+      "variant": "A",
+      "id": "T03-3-A"
+    },
+    {
+      "position": 8,
+      "task": "T03",
+      "repetition": 3,
+      "variant": "B",
+      "id": "T03-3-B"
+    },
+    {
+      "position": 9,
+      "task": "T04",
+      "repetition": 3,
+      "variant": "B",
+      "id": "T04-3-B"
+    },
+    {
+      "position": 10,
+      "task": "T04",
+      "repetition": 3,
+      "variant": "A",
+      "id": "T04-3-A"
+    },
+    {
+      "position": 11,
+      "task": "T04",
+      "repetition": 2,
+      "variant": "B",
+      "id": "T04-2-B"
+    },
+    {
+      "position": 12,
+      "task": "T04",
+      "repetition": 2,
+      "variant": "A",
+      "id": "T04-2-A"
+    },
+    {
+      "position": 13,
+      "task": "T01",
+      "repetition": 2,
+      "variant": "B",
+      "id": "T01-2-B"
+    },
+    {
+      "position": 14,
+      "task": "T01",
+      "repetition": 2,
+      "variant": "A",
+      "id": "T01-2-A"
+    },
+    {
+      "position": 15,
+      "task": "T03",
+      "repetition": 2,
+      "variant": "A",
+      "id": "T03-2-A"
+    },
+    {
+      "position": 16,
+      "task": "T03",
+      "repetition": 2,
+      "variant": "B",
+      "id": "T03-2-B"
+    },
+    {
+      "position": 17,
+      "task": "T01",
+      "repetition": 1,
+      "variant": "B",
+      "id": "T01-1-B"
+    },
+    {
+      "position": 18,
+      "task": "T01",
+      "repetition": 1,
+      "variant": "A",
+      "id": "T01-1-A"
+    },
+    {
+      "position": 19,
+      "task": "T03",
+      "repetition": 1,
+      "variant": "B",
+      "id": "T03-1-B"
+    },
+    {
+      "position": 20,
+      "task": "T03",
+      "repetition": 1,
+      "variant": "A",
+      "id": "T03-1-A"
+    },
+    {
+      "position": 21,
+      "task": "T05",
+      "repetition": 2,
+      "variant": "B",
+      "id": "T05-2-B"
+    },
+    {
+      "position": 22,
+      "task": "T05",
+      "repetition": 2,
+      "variant": "A",
+      "id": "T05-2-A"
+    },
+    {
+      "position": 23,
+      "task": "T02",
+      "repetition": 2,
+      "variant": "B",
+      "id": "T02-2-B"
+    },
+    {
+      "position": 24,
+      "task": "T02",
+      "repetition": 2,
+      "variant": "A",
+      "id": "T02-2-A"
+    },
+    {
+      "position": 25,
+      "task": "T02",
+      "repetition": 3,
+      "variant": "A",
+      "id": "T02-3-A"
+    },
+    {
+      "position": 26,
+      "task": "T02",
+      "repetition": 3,
+      "variant": "B",
+      "id": "T02-3-B"
+    },
+    {
+      "position": 27,
+      "task": "T02",
+      "repetition": 1,
+      "variant": "B",
+      "id": "T02-1-B"
+    },
+    {
+      "position": 28,
+      "task": "T02",
+      "repetition": 1,
+      "variant": "A",
+      "id": "T02-1-A"
+    },
+    {
+      "position": 29,
+      "task": "T05",
+      "repetition": 1,
+      "variant": "B",
+      "id": "T05-1-B"
+    },
+    {
+      "position": 30,
+      "task": "T05",
+      "repetition": 1,
+      "variant": "A",
+      "id": "T05-1-A"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "repository": "moby/profiles",
+  "commit": "4b8214fc4971e06172938a1f1554ccff6647ee80",
+  "path": "seccomp/default.json"
+}

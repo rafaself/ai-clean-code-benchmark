@@ -25,7 +25,7 @@ No experimental observations exist. The following risks are prospective and must
 
 ## Unresolved preparation risks
 
-Runtime feasibility is not verified. Independent acceptance/regression tests, B's compatibility with private-method spies, equivalence evidence, the exact model/environment pin, grader duration, trace coverage, and reviewer availability remain to be established in the next phase. None may be reported as completed merely because this protocol describes it.
+Local runtime feasibility, the independent oracle, compatibility with required private-method spies, bounded equivalence, environment/model configuration, and grading duration are now evidenced in the [preparation report](../experiments/srp/preparation/README.md). Live authenticated inference and token semantics, hosted model snapshot identity, exhaustive concurrency equivalence, and independent reviewer availability remain unresolved. These limits are distinct from passing local checks.
 
 If a preparation gate cannot be satisfied, revise the prospective protocol or project selection with a recorded rationale before collecting outcomes. Do not relax protections or remove inconvenient checks after inspecting measured performance.
 

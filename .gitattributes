@@ -1,0 +1,2 @@
+# Unified-diff context lines contain required leading spaces; check the decoded source separately.
+*.patch -whitespace

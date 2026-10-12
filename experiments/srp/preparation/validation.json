@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-12",
+  "phase": "software preparation, not benchmark results",
+  "benchmark_sessions_executed": 0,
+  "unit_tests": {
+    "A": {
+      "suites": 19,
+      "passed": 761,
+      "failed": 0
+    },
+    "B": {
+      "suites": 19,
+      "passed": 761,
+      "failed": 0
+    }
+  },
+  "builds": {
+    "A": "passed",
+    "B": "passed"
+  },
+  "independent_regressions": {
+    "A": 13,
+    "B": 13
+  },
+  "starting_oracle_case_statuses_equal": true,
+  "expected_task_failures": 16,
+  "positive_control_cases_passed": 30,
+  "graphql_schema_sha256": "f42b7f5ff572d2b3d4b276fef6aff68dba432f2933a439b04b41ae8c5facf1ef",
+  "http_observations_equal": true,
+  "normalized_regression_observations_equal": true,
+  "unchanged_protected_inputs": 281,
+  "source_body_proof": {
+    "extracted_bodies": 22,
+    "public_signatures": 21,
+    "status": "passed"
+  },
+  "unverified": [
+    "live provider authentication/inference",
+    "live token semantics",
+    "hosted immutable model snapshot",
+    "exhaustive concurrency equivalence",
+    "independent blinded treatment review"
+  ],
+  "private_evidence_sha256": {
+    "work/preparation/upstream-e2e-a.json": "20a482e55613ca24baa00cc241a73d234bc80a928b3fa2dc26b9845853ad0dc7",
+    "work/preparation/schema-a.gql": "f42b7f5ff572d2b3d4b276fef6aff68dba432f2933a439b04b41ae8c5facf1ef",
+    "work/preparation/http-a.json": "410f93477e10063d351653b622ef8b7df1aacfeb6bab47bb5097d6157ce5bd95",
+    "work/preparation/positive-control.json": "069d3de2c9424d52dd989d50b675b54d215b89ecdb68a1d8efedb14d0e499010",
+    "work/preparation/sandbox-isolation.log": "c7756d797f53523ddbe4e9fa718b89acb4e3f597d4b381321cb6854b8f361335",
+    "work/preparation/http-b.json": "410f93477e10063d351653b622ef8b7df1aacfeb6bab47bb5097d6157ce5bd95",
+    "work/preparation/final-oracle-a.json": "cc5dcda3f025b81cfee0cb3f2d86e1882e3c0c81be420de2c05ffe2365409ba3",
+    "work/preparation/final-observations-a.json": "dfaa8f72fdfaad49a91004c47b9bf3674669388f5c2516549ab87af27e527c05",
+    "work/preparation/final-unit-a.json": "8a8d37f74ac2ee47f5d89ade1e7ed31d320b6a3f2992dc78d9620d49e6e625a2",
+    "work/preparation/final-unit-b.json": "fd1f96f4b3d067c251967d6a548a9e48afd27dc84d9558e64cf29a0fbdbdb4df",
+    "work/preparation/schema-b.gql": "f42b7f5ff572d2b3d4b276fef6aff68dba432f2933a439b04b41ae8c5facf1ef",
+    "work/preparation/body-proof.json": "6a52ab9af6d85dceb0975d4374e0750f7ff7ad658eb8eb6113163d59ae0a7d03",
+    "work/preparation/final-oracle-b.json": "54ed034ca85c8308ec25f6c65d46478816a988403570665c20dfb78e84814499",
+    "work/preparation/final-observations-b.json": "dfaa8f72fdfaad49a91004c47b9bf3674669388f5c2516549ab87af27e527c05"
+  },
+  "dedicated_driver_inference_requests": 0,
+  "preparation_assisted_by_codex": true,
+  "database_seed_restore": {
+    "status": "passed",
+    "infra_config_rows": 49,
+    "migration_records": 22,
+    "fixture_teams": 0
+  },
+  "structural_inventory": {
+    "original_service_lines": 1576,
+    "B_facade_lines": 611,
+    "B_total_source_lines": 1915,
+    "additional_lines": 339,
+    "additional_source_files": 4
+  }
+}

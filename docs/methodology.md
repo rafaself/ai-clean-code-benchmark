@@ -2,7 +2,7 @@
 
 ## Study status and design
 
-This is a documentation-only, prospective exploratory protocol. No variants, independent test harness, runner, or results exist yet. All preparation and measured execution described here are future work.
+This is a prospective exploratory protocol. Its original preparation steps have now been implemented locally; see the [preparation report](../experiments/srp/preparation/README.md) and pre-outcome amendments for evidence and exact artifacts. No benchmark agent outcomes exist. The remaining live-provider readiness check precedes separately authorized execution.
 
 The initial design has five tasks, two variants, and three fresh sessions for each task/variant cell: **30 scheduled sessions**. The experimental treatment is one specified SRP decomposition of Hoppscotch's team-collection subsystem at upstream SHA `63273f8e599e73f0fb38c0739314e8d46b6bc83d`. A repetition is an independent fresh context operationally, not a guarantee of independent model samples statistically.
 

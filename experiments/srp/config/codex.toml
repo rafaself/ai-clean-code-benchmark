@@ -1,0 +1,72 @@
+model = "gpt-6-sol"
+model_provider = "benchmark-gateway"
+model_reasoning_effort = "high"
+approval_policy = "never"
+default_permissions = "benchmark"
+web_search = "disabled"
+personality = "none"
+
+[model_providers.benchmark-gateway]
+name = "Isolated benchmark gateway"
+base_url = "http://model-gateway:8080/v1"
+env_key = "BENCHMARK_DRIVER_TOKEN"
+wire_api = "responses"
+requires_openai_auth = false
+supports_websockets = false
+
+[features]
+network_proxy = false
+apps = false
+browser_use = false
+browser_use_external = false
+browser_use_full_cdp_access = false
+computer_use = false
+memories = false
+multi_agent = false
+multi_agent_v2 = false
+code_mode_host = false
+skill_mcp_dependency_install = false
+
+[permissions.benchmark.filesystem]
+":minimal" = "read"
+"/usr" = "read"
+"/etc" = "read"
+"/lib" = "read"
+"/lib64" = "read"
+"/bin" = "read"
+"/workspace" = "write"
+"/tmp" = "write"
+"/db-socket" = "write"
+"/home/node" = "deny"
+"/control" = "deny"
+"/evaluator" = "deny"
+"/workspace/.codex" = "read"
+"/workspace/node_modules" = "read"
+"/workspace/packages/hoppscotch-backend/node_modules" = "read"
+"/workspace/packages/hoppscotch-backend/src/generated" = "read"
+
+[permissions.benchmark.network]
+enabled = true
+[permissions.benchmark.network.unix_sockets]
+"/db-socket/.s.PGSQL.5432" = "allow"
+
+[shell_environment_policy]
+inherit = "none"
+experimental_use_profile = false
+[shell_environment_policy.set]
+PATH = "/usr/local/bin:/usr/bin:/bin"
+DATABASE_URL = "postgresql://benchmark:benchmark@localhost:5432/benchmark?host=/db-socket"
+DATA_ENCRYPTION_KEY = "12345678901234567890123456789012"
+TZ = "UTC"
+PRODUCTION = "true"
+WHITELISTED_ORIGINS = "http://localhost:3000"
+VITE_BASE_URL = "http://localhost:3000"
+VITE_ADMIN_URL = "http://localhost:3100"
+VITE_SHORTCODE_BASE_URL = "http://localhost:3000"
+VITE_BACKEND_GQL_URL = "http://localhost:3170/graphql"
+VITE_BACKEND_WS_URL = "ws://localhost:3170/graphql"
+VITE_BACKEND_API_URL = "http://localhost:3170/v1"
+PROXY_APP_URL = "http://localhost:3000"
+TRUST_PROXY = "false"
+ENABLE_SUBPATH_BASED_ACCESS = "false"
+PORT = "3170"
