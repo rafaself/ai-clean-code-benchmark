@@ -1,0 +1,3 @@
+Implement the requested maintenance change in the existing Hoppscotch backend. Preserve unrelated behavior, dependency versions, runtime configuration, authentication, and authorization. You may add relevant tests. Do not weaken or edit existing tests, introduce unrelated refactoring, or retrieve external solutions. Inspect and verify your changes autonomously within the 30-minute budget.
+
+Ordered root collection export: export root collections for a team ordered by orderIndex ascending and then ID ascending for equal indices. Preserve the existing output shape, nested folder/request ordering, and team isolation. Empty teams return the existing empty export.

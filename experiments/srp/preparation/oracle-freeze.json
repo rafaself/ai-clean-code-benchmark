@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-12",
+  "phase": "preparation; not benchmark results",
+  "upstream": "63273f8e599e73f0fb38c0739314e8d46b6bc83d",
+  "files": {
+    "experiments/srp/config/AGENTS.md": "8f1c1604900e344f0ce54a061f10f63160da1c99df5e9d5417a122fb2b23c8db",
+    "experiments/srp/config/runtime.env": "6c0ba40ef452749f670ac5b89f023a6b72d16e09951d7aa05014e86bd3d71443",
+    "experiments/srp/evaluator/README.md": "4c82e296f4feeb73d96812c23ce0306e153b0ce6777035898ffc5fe9aaa90309",
+    "experiments/srp/evaluator/jest.config.cjs": "3286a0c23171927763e0c6fa311cee30e04fd8d4d2fa1c3144f98d2d0b54f852",
+    "experiments/srp/evaluator/maintenance.spec.cjs": "2e45e3040da697fd5ca2a159a96925675049557a7f35bc53e086691552b5b1f0",
+    "experiments/srp/prompts/T01.txt": "60dff72a662bfce448422ab40de516a77860e2d641bcac18e1f7ace53183f992",
+    "experiments/srp/prompts/T02.txt": "82287d6f8ecc41e910cced39b11b8703d5e23e0236e1b09a80dca6a35e8f0c00",
+    "experiments/srp/prompts/T03.txt": "86dbdd5541d15e07ab9abdcbce896fb19e362c89a7a3b1693f60dd57774e2d7c",
+    "experiments/srp/prompts/T04.txt": "51aeb963a63dc4b8b95853704264cfabd7734b38a4f7ea91e8bb0a6745b3f79b",
+    "experiments/srp/prompts/T05.txt": "593c17258b6267d22345ba950ab478b46e73c99226245f58b75a0c06f1a9c981"
+  },
+  "baseline_cases": [
+    {
+      "id": "RG R01 CRUD state, hierarchy and notification contract",
+      "status": "passed"
+    },
+    {
+      "id": "RG R02 valid nested import persists data and root events",
+      "status": "passed"
+    },
+    {
+      "id": "RG R03 import parent ownership, missing parent and invalid JSON errors",
+      "status": "passed"
+    },
+    {
+      "id": "RG R04 failed import rolls back earlier roots and publishes nothing",
+      "status": "passed"
+    },
+    {
+      "id": "RG R05 move rejects cycles, self and cross-team destinations",
+      "status": "passed"
+    },
+    {
+      "id": "RG R06 move child to root preserves records and event payload",
+      "status": "passed"
+    },
+    {
+      "id": "RG R07 root deletion and reordering are isolated by team",
+      "status": "passed"
+    },
+    {
+      "id": "RG R08 title sorts retain existing order and scope",
+      "status": "passed"
+    },
+    {
+      "id": "RG R09 CLI retrieval requires membership and includes requests",
+      "status": "passed"
+    },
+    {
+      "id": "RG R10 REST guard authorizes membership and rejects foreign users",
+      "status": "passed"
+    },
+    {
+      "id": "RG R11 GraphQL collection guard checks role and team membership",
+      "status": "passed"
+    },
+    {
+      "id": "RG R12 missing collections and invalid titles/data preserve errors",
+      "status": "passed"
+    },
+    {
+      "id": "RG R13 search preserves literal matching, ancestry, grouping and isolation",
+      "status": "passed"
+    },
+    {
+      "id": "T01 canonical nested request metadata (object payload)",
+      "status": "failed"
+    },
+    {
+      "id": "T01 canonical nested request metadata (string payload)",
+      "status": "failed"
+    },
+    {
+      "id": "T01 duplication carries canonical nested request names into new rows",
+      "status": "failed"
+    },
+    {
+      "id": "T02 roots follow orderIndex then ID, regardless of insertion order",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 0 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 1 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 2 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 3 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 4 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 5 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 6 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 invalid nested structure 7 rejected before transaction",
+      "status": "failed"
+    },
+    {
+      "id": "T03 empty lists and unnormalized nonempty names remain valid",
+      "status": "passed"
+    },
+    {
+      "id": "T03 malformed structure takes precedence over missing parent",
+      "status": "failed"
+    },
+    {
+      "id": "T04 creation sort preserves sibling and team scope (null)",
+      "status": "failed"
+    },
+    {
+      "id": "T04 creation sort preserves sibling and team scope (parent)",
+      "status": "failed"
+    },
+    {
+      "id": "T05 descending similarity and ID ties within each paginated result group",
+      "status": "failed"
+    }
+  ]
+}
