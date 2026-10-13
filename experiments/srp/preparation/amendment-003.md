@@ -1,0 +1,17 @@
+# Amendment 003 — collection failure, retention, and execution restart
+
+Date: 2026-10-13 UTC. Revision 002 stopped after its first agent session, before external grading. No later scheduled session started. Its trace, termination, private infrastructure logs, and provenance remain in ignored `work/measured-srp-001/`; [the sanitized attempt record](../results/attempts/aborted-v2.json) preserves the inventory. [The revision 002 manifest](execution-manifest-v2.json) and Git commit `e19ae1353ed9e1d2c17e1791ddf43d0be32d109c` preserve its original protocol.
+
+## What failed
+
+Git patch collection used exclusion patterns for directory contents without correctly excluding the ignored `node_modules` directory itself. Git staging returned an error. Cleanup retried collection, then incorrectly removed both the agent workspace and preserved baseline despite having no durable final source archive or patch. `final.patch` is an empty placeholder, not an observed empty solution. The surviving trace contains an intermediate complete diff followed by additional file-change metadata and aggregate stats; it cannot establish the exact final source. No reconstruction or external acceptance/regression result is invented.
+
+The trace also shows the agent modifying a protected original unit-test file. That is a separate observed integrity breach under the unchanged controls. The original attempt is ungraded with both facts disclosed; it is not described as a clean infrastructure-only failure or a successful/unsuccessful functional solution. Its actual termination and usage remain available, separate from the new study denominator.
+
+## Correction and new prospective version
+
+Revision 003 fixes directory exclusion and validates collection using real Git fixtures with ignored root/nested dependencies, modified tracked files, added files, and agent commits. Source is archived before patch capture. Cleanup retains the source workspace and baseline whenever complete artifact preservation fails. A verified edit to a protected test/configuration is recorded as an unsuccessful integrity outcome, rather than excluded as infrastructure; unsafe altered grading controls are not executed. The protected-file rule is unchanged and not relaxed in response to the first attempt.
+
+Before further measured runs, the full collection/retention and integrity paths must pass software preflight. A new committed execution manifest prospectively fixes the reviewed runner. The new version uses the same upstream/Variant B, task prompts, model/reasoning, instructions, acceptance/regression suites, resources, budgets, thresholds, and recorded 30-session order. Revision 002 is stopped; revision 003 starts the complete matrix with fresh source/database/session state. Do not pool outcomes across harness revisions or silently restart the old run directory. Preserve the prior attempt in the cross-revision inventory. Any later infrastructure replacements still follow the original per-observation rule after that version's original schedule.
+
+The preparer has now seen one ungraded A search-task trace. This is an additional validity threat, alongside possible provider cache warming; no task solution, feedback, altered prompt, or selection based on correctness is supplied to new agents. Interpretation remains exploratory. The restart and its extra consumed session must be disclosed, even if later findings appear favorable.

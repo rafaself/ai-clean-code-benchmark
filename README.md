@@ -2,7 +2,7 @@
 
 An exploratory research project investigating whether established software engineering practices help AI coding agents maintain existing software. The initial study evaluates the Single Responsibility Principle (SRP) using OpenAI Codex. Benefits, costs, and no improvement are all possible outcomes.
 
-**Status at execution freeze: readiness passed; measured schedule authorized, not yet started.** The research foundation is followed by a frozen oracle, validated SRP patch, and execution configuration. See the [preparation report](experiments/srp/preparation/README.md), [readiness amendment](experiments/srp/preparation/amendment-002.md), and [execution procedure](experiments/srp/execution.md). Subsequent findings belong in `experiments/srp/results/`; preparation checks are not benchmark outcomes.
+**Status at revision 003 freeze: revision 002 stopped after one ungraded attempt; the corrected complete matrix is authorized and not yet started.** The research foundation is followed by a frozen oracle, validated SRP patch, and execution configuration. See the [preparation report](experiments/srp/preparation/README.md), [readiness amendment](experiments/srp/preparation/amendment-002.md), and [execution procedure](experiments/srp/execution.md), and [collection/restart amendment](experiments/srp/preparation/amendment-003.md). Subsequent findings belong in `experiments/srp/results/`; preparation checks are not benchmark outcomes.
 
 ## Research question
 
@@ -38,7 +38,7 @@ These thresholds are exploratory practical signals, not significance tests. Five
 
 Reproducible setup, independent acceptance/regression tests, Variant B, and the execution manifest are prepared and validated locally. A/B builds and all 761 unchanged unit tests pass; their 13 independent regression cases and unmet task requirements match. The GraphQL schema and tested HTTP contracts match. A private positive control validates the acceptance oracle.
 
-The original broken e2e scaffold remains unchanged and is disclosed in [amendment 001](experiments/srp/preparation/amendment-001.md). Software validation is not benchmark evidence. The live authentication/telemetry readiness check passed using a non-benchmark prompt. Amendment 002 corrects the Code Mode host setting identically for both variants, hardens grading isolation, and freezes the reviewed serial runner before measured outcomes. Execution requires explicit switches and the recorded user authorization.
+The original broken e2e scaffold remains unchanged and is disclosed in [amendment 001](experiments/srp/preparation/amendment-001.md). Software validation is not benchmark evidence. The live authentication/telemetry readiness check passed using a non-benchmark prompt. Amendment 002 corrects the Code Mode host setting identically for both variants and hardens grading isolation. Amendment 003 records the first collector failure, loss of its final source, observed protected-test edit, and the prospective restart under a corrected harness. No functional score is fabricated for that attempt. Execution requires explicit switches and the recorded user authorization.
 
 ## Future organization
 

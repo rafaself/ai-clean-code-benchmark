@@ -28,6 +28,14 @@ class ScoringIntegrityTest(unittest.TestCase):
     def test_timeout_cannot_be_upgraded_by_passing_tests(self):
         self.put('termination.json',{'code':0,'container_exit_code':0,'timed_out':True,'container_oom_killed':False})
         self.assertFalse(score(self.root,self.ids)['correct_completion'])
+    def test_integrity_rejection_retains_observed_usage(self):
+        self.put('grading/status.json',{'status':'integrity_failure','reason':'protected_source_changed_before_grading'})
+        (self.root/'control').mkdir()
+        (self.root/'control/events.jsonl').write_text(json.dumps({'type':'turn.started'})+'\n'+json.dumps({'type':'turn.completed','usage':{'input_tokens':7,'cached_input_tokens':3,'output_tokens':2}})+'\n')
+        result=score(self.root,self.ids)
+        self.assertFalse(result['correct_completion'])
+        self.assertEqual(result['telemetry']['reported_total_tokens'],9)
+
     def test_build_integrity_required(self):
         p=self.root/'grading/status.json';d=json.loads(p.read_text());d['checks']['post_build_verification']['passed']=False;self.put(str(p.relative_to(self.root)),d)
         self.assertFalse(score(self.root,self.ids)['correct_completion'])

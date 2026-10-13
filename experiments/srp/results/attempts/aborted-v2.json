@@ -1,0 +1,46 @@
+{
+  "study_revision": "srp-v1-amendment-002",
+  "repository_commit": "e19ae1353ed9e1d2c17e1791ddf43d0be32d109c",
+  "run_id": "ede7f02dc6404ed8be6c557ebb313138",
+  "session": "T05-3-A",
+  "task": "T05",
+  "variant": "A",
+  "repetition": 3,
+  "classification": "ungraded attempt with collector failure and observed protected-test change; aborted revision",
+  "classification_basis": "Git final-patch capture failed on ignored node_modules before any external task grading. This occurs independently of maintenance correctness. Cleanup erroneously removed the only working source/baseline; raw trace remains.",
+  "correct_completion": null,
+  "regression_count": null,
+  "patch_available": false,
+  "empty_patch_file_is_placeholder": true,
+  "termination": {
+    "agent_budget_seconds": 1800,
+    "code": 0,
+    "container_exit_code": 0,
+    "container_oom_killed": false,
+    "elapsed_seconds": 203.568894134,
+    "signal": null,
+    "timed_out": false
+  },
+  "telemetry": {
+    "observed_tool_action_items": 45,
+    "exact_internal_tool_calls": null,
+    "input_tokens": 614328,
+    "cached_input_tokens": 345984,
+    "output_tokens": 8497,
+    "reasoning_output_tokens": 3188,
+    "reported_total_tokens": 622825,
+    "usage_records": 1,
+    "usage_complete": true
+  },
+  "trace_sha256": "809fa4ccac5b175f3c6f8c3896e8db2a732e285fac4f347a4bfe332f501bce09",
+  "capture_error_sha256": "79408894184daa8308ab4f2e8ecb0dae2358e8bb532200d8c7275e91b78f55b9",
+  "scheduled_sessions_attempted": 1,
+  "scheduled_sessions_graded": 0,
+  "replacement_in_this_revision": null,
+  "handling": "Retain both facts. No reconstructed patch, fabricated score, or infrastructure-only replacement. Stop revision002; revised prospective version003 runs the complete unchanged matrix. Publish inventory across revisions separately and disclose preparer exposure/cache warming.",
+  "observed_integrity_breach": {
+    "path": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+    "evidence": "Completed trace file-change events plus last git status/stat show the protected test file modified; final source cannot be recovered.",
+    "external_grading_available": false
+  }
+}

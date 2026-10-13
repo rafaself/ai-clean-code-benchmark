@@ -2,6 +2,7 @@
 from collections import Counter
 import argparse
 import json
+from telemetry import summarize
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -34,6 +35,12 @@ def score(session, identities):
             elif key in required:
                 failed_original.append({'file': file, 'name': case['fullName'], 'status': case['status']})
     original_tests_ok = bool(unit) and unit.get('success') is True and all(passed[k] >= v for k, v in required.items()) and unit.get('numFailedTests') == 0 and unit.get('numPendingTests') == 0
+    telemetry = grading.get('telemetry') or {}
+    if not telemetry:
+        try:
+            telemetry = summarize(json.loads(line) for line in (session / 'control/events.jsonl').read_text().splitlines() if line.strip())
+        except (OSError, ValueError):
+            telemetry = {}
     checks = grading.get('checks', {})
     build_ok = checks.get('build', {}).get('exit_code') == 0 and checks.get('build', {}).get('timed_out') is False
     integrity = grading.get('verification', {}).get('passed') is True and checks.get('post_build_verification', {}).get('passed') is True
@@ -48,8 +55,8 @@ def score(session, identities):
             'regression_incidence': bool(failed_rg or failed_original) if oracle and unit else None,
             'oracle_statuses': actual, 'expected_oracle_cases': len(expected),
             'elapsed_seconds': termination.get('elapsed_seconds'), 'timed_out': termination.get('timed_out'),
-            'telemetry': grading.get('telemetry') or {}, 'grading_status': grading.get('status'),
-            'classification': 'attempt retained; infrastructure exclusion requires a separate written review'}
+            'telemetry': telemetry, 'grading_status': grading.get('status'),
+            'classification': 'unsuccessful protected-input integrity outcome' if grading.get('status') == 'integrity_failure' else 'attempt retained; infrastructure exclusion requires a separate written review'}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

@@ -348,18 +348,18 @@
     "pnpm-workspace.yaml": "5b5656f5d4a773218ccbdb5e53dca1e76bc89d97852b47bd6e619a98c44642bf"
   },
   "known_unscored_upstream_failure": "packages/hoppscotch-backend/test/app.e2e-spec.ts; TS2349; retained unchanged; amendment-001",
-  "prelaunch_gate": "Passed bounded non-benchmark authenticated instrumentation under amendment-002; preserve protocol, fresh snapshots, credentials isolation, and artifact hashes for measured runs.",
+  "prelaunch_gate": "Successful live isolated readiness remains unchanged; revision003 additionally passes full real-subject collection/archive/freshclone/grading plus failure-retention/integrity fixtures. First ungraded revision disclosed.",
   "artifact_sha256": {
     ".gitignore": "cb03584841fb204c4fd060d42a04093cd77e2cbc345d5e0b7ddf67b1ae82e564",
     "LICENSE": "711335d81cface1964fafb9d9659310d38ccfd71c92308ec0257f85ec585a9fb",
-    "README.md": "7440af893964216b0bc734965ae4e3d589005c0a4ca302f0ece06a22e5df40f6",
+    "README.md": "dbf1459e2d8422c7167344e44d7900364a89bedb1e87406688db60a0bb57f647",
     "docs/evaluation-criteria.md": "1d4509d53b21aaee56ee9795bf283e88fcfe933fbd53fec2d7589ab40e0810b7",
     "docs/hypotheses.md": "756d8400d1a768995586899b3172cb23a88bea4b9cd05639a3a5d1b3fd4b866e",
     "docs/limitations.md": "85a7bfe44c38f94a905fa6224cdaf6b45b6891c0038e47b27cac1e389283e171",
     "docs/methodology.md": "ecc7a253d871aab7b3df58c70f39359b22e62415295b03d3ac1a2107fc4bb834",
     "docs/project-selection.md": "8952e8461e635a644084732110d590de70f36bce457e00676969bda8013c7184",
     "docs/research-question.md": "1035231422e8fea981e5838832d266802e8b6e627458cdbfbc057caa1d0d0b31",
-    "experiments/srp/README.md": "67b5f61745b17864f3538f4603094904d0bfc1213c6f9ff07ec17da5d1343ef0",
+    "experiments/srp/README.md": "f83a8e71c072f426def7d0029d9f2781d1bd752db110effad7d1974e5fa46f56",
     "experiments/srp/config/AGENTS.md": "8f1c1604900e344f0ce54a061f10f63160da1c99df5e9d5417a122fb2b23c8db",
     "experiments/srp/config/Dockerfile": "3e9aac73a832472cccd214a22d2b4ac1026b1408d90ed2959870ecac00d002dd",
     "experiments/srp/config/SECCOMP-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -397,19 +397,32 @@
     "experiments/srp/preparation/execution-manifest-v1.json": "b4e3be7179da8b2681eac804b66794d3cb5a39a70c8d80955668ff956cd257d2",
     "experiments/srp/preparation/readiness.json": "5069640afd668cfb55407a2902b2ad07db0308cc16bbd6a4890576d70f577e78",
     "experiments/srp/preparation/amendment-002.md": "db33adcebcdcb7f9b4404dca32c8ae10063850f677d2c0705166b30c27f222a1",
-    "experiments/srp/execution.md": "0ae32e64a1c06545671df7f34e6610f2d151ae20b2e11225fff62cee937df565",
+    "experiments/srp/execution.md": "abf1507aa71bcd10d5002285b45ad7c27ec09f15b4a4c9e74272daf30b5693b6",
     "experiments/srp/preparation/required-test-identities.json": "0584f56e1f490c36850b8483367ebaed418b0f53337c9a7656271ac93f00f9f4",
-    "experiments/srp/tools/score.py": "30fc4f8f7c5826fc88f21d336245c6d9a655ffb8cd49461b3c3ed71ac15e9092",
-    "experiments/srp/tools/test_score.py": "4fb34bae1a99a5555c606bfc8dadc0d22610878be698468e453a811f69f3a340",
-    "experiments/srp/tools/serial-runner.py": "ad61e8f41d4c5d70d18c6f6edacb6bacea742f217e4d5f65b149fdce4778145a"
+    "experiments/srp/tools/score.py": "afa12ef0de121b2e48370311bed5ad82482b534310b8346be7bcfa3a7a070ced",
+    "experiments/srp/tools/test_score.py": "8aea1228ff89b7c19aaaf63cf45d6bc636af8138b44c2b120d10338a4bf6b79e",
+    "experiments/srp/tools/serial-runner.py": "d54929eb09a5875249ea763e75b1af78da8e13d8e90dbb800313a30b4b0e5ca6",
+    "experiments/srp/preparation/execution-manifest-v2.json": "744b36542faba9ba3e7ebd262ad69705262a244b2ae369ae6f3de476454248d0",
+    "experiments/srp/preparation/amendment-003.md": "72c14476b69618f272965f1d5a92bf7a57ef69c52dc52feee468680207c0b020",
+    "experiments/srp/results/attempts/aborted-v2.json": "54413f56b617fc5826cfc47fa458fb28c88741d9fe60732d24c7dceecd7bb7bc",
+    "experiments/srp/tools/test_serial_runner.py": "2368d343e6a9c5f0187285c430792745b6c4d49a9464761625dce38ed7151e31",
+    "experiments/srp/preparation/collection-preflight.json": "34512a6d85d761b0ffdd5031a47463808ac7eb342f425a08069fd9b9bd70523e"
   },
-  "protocol_revision": "srp-v1-amendment-002",
+  "protocol_revision": "srp-v1-amendment-003",
   "authorization_evidence": "User: Proceed with next steps, following readiness -> frozen 30-session schedule -> grading -> findings; 2026-10-12 America/Sao_Paulo",
   "serial_runner": {
     "path": "experiments/srp/tools/serial-runner.py",
-    "sha256": "ad61e8f41d4c5d70d18c6f6edacb6bacea742f217e4d5f65b149fdce4778145a",
+    "sha256": "d54929eb09a5875249ea763e75b1af78da8e13d8e90dbb800313a30b4b0e5ca6",
     "launch_requires": "explicit authorization switch, private auth path, new ignored output, exact reviewed script digest",
     "default": "no services or inference",
     "grade_outputs": "host-captured JSON stdout; readonly tests; post-build source integrity"
-  }
+  },
+  "prior_aborted_revision": {
+    "manifest": "experiments/srp/preparation/execution-manifest-v2.json",
+    "repository_commit": "e19ae1353ed9e1d2c17e1791ddf43d0be32d109c",
+    "attempt_inventory": "experiments/srp/results/attempts/aborted-v2.json",
+    "graded_observations": 0,
+    "handling": "not pooled; no reconstructed or fabricated functional score; collector defect and observed protected-test edit both disclosed"
+  },
+  "restart": "Complete unchanged prospective matrix in new private output; earlier ungraded revision retained separately. No prompts/variants/model/budgets/thresholds changed."
 }

@@ -1,6 +1,6 @@
 # SRP exploratory experiment
 
-**Status at execution freeze: readiness passed; benchmark execution authorized, not yet started.** The [preparation report](preparation/README.md) records the frozen oracle, validated decomposition, source patch, execution manifest, and the original live-provider readiness gap. [Amendment 002](preparation/amendment-002.md) records the successful non-benchmark readiness check and executable harness correction. The task contracts below remain prospective; validation counts are not agent outcomes.
+**Status at revision 003 freeze: revision 002 stopped after one ungraded attempt; corrected complete-matrix execution authorized, not yet started.** The [preparation report](preparation/README.md) records the frozen oracle, validated decomposition, source patch, execution manifest, and the original live-provider readiness gap. [Amendment 002](preparation/amendment-002.md) records the successful non-benchmark readiness check and executable harness correction. The task contracts below remain prospective; validation counts are not agent outcomes.
 
 ## Design and treatment
 
@@ -56,3 +56,5 @@ An exploratory effectiveness signal is a 20 percentage-point increase in B's com
 - [ ] Verify live authenticated inference and token semantics with a non-benchmark instrumentation prompt before launch.
 
 Only a subsequent phase executes the measured sessions. Later evidence will link back to the frozen manifest and include all attempts and sanitized artifacts. No numeric results or placeholder outcomes belong in this foundation.
+
+See [amendment 003](preparation/amendment-003.md) for the recorded collector failure, preservation correction, integrity classification, and prospective restart. The earlier attempt is retained separately without an invented functional score.

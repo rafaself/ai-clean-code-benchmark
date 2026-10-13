@@ -361,6 +361,19 @@ def verify_frozen_artifacts(manifest: dict, log_dir: Path) -> None:
             raise AbortRun("cache_hash_mismatch", "A private local cache is missing or does not match its frozen hash.")
 
 
+def protected_subject_violation(stderr_path: Path) -> bool:
+    """Recognize only explicit subject hash mismatches from verify.py."""
+    try:
+        lines = stderr_path.read_text(errors="replace").splitlines()
+    except OSError:
+        return False
+    return any(
+        line.startswith("Changed or missing protected subject input: ")
+        or line == "Staged root AGENTS.md does not match frozen common instructions"
+        for line in lines
+    )
+
+
 def validate_code_mode_config(manifest: dict) -> str:
     try:
         raw = (CONFIG / "codex.toml").read_bytes()
@@ -741,10 +754,10 @@ def capture_final_patch(
         (["git", "read-tree", baseline_commit], "patch-read-tree"),
         ([
             "git", "add", "-A", "--", ".",
-            ":(exclude)node_modules/**", ":(exclude)**/node_modules/**",
-            ":(exclude).git/**", ":(exclude)**/.git/**",
-            ":(exclude)dist/**", ":(exclude)**/dist/**",
-            ":(exclude)coverage/**", ":(exclude)**/coverage/**",
+            ":(exclude,glob)**/node_modules", ":(exclude,glob)**/node_modules/**",
+            ":(exclude,glob)**/.git", ":(exclude,glob)**/.git/**",
+            ":(exclude,glob)**/dist", ":(exclude,glob)**/dist/**",
+            ":(exclude,glob)**/coverage", ":(exclude,glob)**/coverage/**",
         ], "patch-stage"),
     ):
         rc = capture(argv, logs / f"{stem}.stdout", logs / f"{stem}.stderr", cwd=workspace, env=env, timeout=180)
@@ -869,7 +882,9 @@ def build_evaluation_workspace(
         deadline=deadline,
     )
     if protected_rc:
-        raise AbortRun("protected_source_changed", "The final patch changed a protected upstream source or test file.")
+        if protected_subject_violation(logs / "protected-source-verify.stderr"):
+            raise AbortRun("protected_source_changed", "The final patch changed a protected upstream source or test file.")
+        raise AbortRun("protected_source_verification_failed", "The protected-source verifier could not validate the final patch.")
     deps = ROOT / manifest["local_cache"][DEPENDENCY_NAME]["path"]
     try:
         with tarfile.open(deps, "r:gz") as dependency_tar:
@@ -1109,6 +1124,23 @@ def grade_session(
         write_json(grade_dir / "status.json", result | {"finished_at_utc": utc_now()})
         return result
     verification = {"exit_code": verify_rc, "passed": verify_rc == 0}
+    if verify_rc:
+        if protected_subject_violation(verify_err):
+            result = {
+                "status": "integrity_failure",
+                "reason": "protected_source_changed_before_grading",
+                "verification": verification,
+                "checks": {},
+            }
+        else:
+            result = {
+                "status": "infrastructure_abort",
+                "reason": "protected_source_verifier_failed",
+                "verification": verification,
+                "checks": {},
+            }
+        write_json(grade_dir / "status.json", result | {"finished_at_utc": utc_now()})
+        return result
 
     checks: dict[str, dict] = {}
     seccomp = (CONFIG / "seccomp.json").resolve()
@@ -1286,9 +1318,10 @@ def grade_session(
         return result
     checks["post_build_verification"] = {"exit_code": post_verify_rc, "passed": post_verify_rc == 0}
     if post_verify_rc:
+        protected_changed = protected_subject_violation(post_verify_err)
         result = {
-            "status": "halt_for_review",
-            "reason": "protected_source_changed_during_build",
+            "status": "integrity_failure" if protected_changed else "infrastructure_abort",
+            "reason": "protected_source_changed_during_build" if protected_changed else "post_build_protected_source_verifier_failed",
             "verification": verification,
             "checks": checks,
         }
@@ -1575,6 +1608,14 @@ def grade_and_record(
         grade_dir.mkdir(mode=0o700, exist_ok=True)
         write_json(grade_dir / "status.json", result | {"finished_at_utc": utc_now()})
         return result
+    except AbortRun as error:
+        if error.code != "protected_source_changed":
+            raise
+        result = {"status": "integrity_failure", "reason": "protected_source_changed_before_grading"}
+        grade_dir = session_dir / "grading"
+        grade_dir.mkdir(mode=0o700, exist_ok=True)
+        write_json(grade_dir / "status.json", result | {"finished_at_utc": utc_now()})
+        return result
     write_json(session_dir / "artifacts.json", {
         "final_patch_sha256": patch_hash,
         "final_patch_bytes": patch.stat().st_size,
@@ -1627,6 +1668,7 @@ def run_one(
     baseline_commit = None
     agent_launched = False
     final_saved = False
+    artifact_capture_failed = False
     session_started_at = utc_now()
     append_jsonl(run_root / "outcomes.jsonl", {
         "at_utc": session_started_at, "position": item["position"], "session": name, "state": "staging",
@@ -1691,15 +1733,30 @@ def run_one(
         write_json(session_dir / "termination.json", termination)
         write_json(session_dir / "trace-summary.json", trace_summary)
         remove_driver_token(control)
-        patch_hash = capture_final_patch(workspace, baseline_repo, baseline_commit, session_dir, logs)
-        snapshot_hash = save_final_snapshot(workspace, session_dir / "final-source.tar.gz", logs)
+        try:
+            snapshot_hash = save_final_snapshot(workspace, session_dir / "final-source.tar.gz", logs)
+            patch_hash = capture_final_patch(workspace, baseline_repo, baseline_commit, session_dir, logs)
+            write_json(session_dir / "artifacts.json", {
+                "final_patch_sha256": patch_hash,
+                "final_patch_bytes": patch.stat().st_size,
+                "final_source_snapshot_sha256": snapshot_hash,
+                "final_source_snapshot": "final-source.tar.gz",
+            })
+        except Exception:
+            artifact_capture_failed = True
+            try:
+                write_json(session_dir / "artifact-capture-error.json", {
+                    "at_utc": utc_now(),
+                    "attempt": "primary",
+                    "source_preserved": True,
+                    "workspace": "workspace",
+                    "baseline_repo": "baseline.git",
+                    "snapshot_present": (session_dir / "final-source.tar.gz").is_file(),
+                })
+            except OSError:
+                pass
+            raise
         final_saved = True
-        write_json(session_dir / "artifacts.json", {
-            "final_patch_sha256": patch_hash,
-            "final_patch_bytes": patch.stat().st_size,
-            "final_source_snapshot_sha256": snapshot_hash,
-            "final_source_snapshot": "final-source.tar.gz",
-        })
         append_jsonl(run_root / "outcomes.jsonl", {
             "at_utc": utc_now(), "position": item["position"], "session": name,
             "state": "agent_stopped_and_patch_saved",
@@ -1718,9 +1775,10 @@ def run_one(
         if result.get("status") == "halt_for_review":
             reason_code = str(result.get("reason") or "grading_halt_for_review")
             raise AbortRun(reason_code, "External grading flagged this result for review; the schedule stopped.")
-        if state.get("OOMKilled"):
+        integrity_failure = result.get("status") == "integrity_failure"
+        if not integrity_failure and state.get("OOMKilled"):
             raise AbortRun("agent_oom_killed", "The agent container exceeded the frozen memory limit after its patch was graded.")
-        if exit_code != 0:
+        if not integrity_failure and exit_code != 0 and not termination.get("timed_out"):
             raise AbortRun("agent_exit_nonzero", "The agent CLI exited unexpectedly after its final patch was graded.")
         if trace_summary.get("provider_or_cli_error_events", 0):
             raise AbortRun("provider_or_cli_error", "The final patch was graded, but the trace contains provider or CLI error events.")
@@ -1739,9 +1797,8 @@ def run_one(
         if not final_saved and workspace.exists():
             try:
                 if baseline_repo and baseline_commit:
-                    patch_hash = capture_final_patch(workspace, baseline_repo, baseline_commit, session_dir, logs)
                     snapshot_hash = save_final_snapshot(workspace, session_dir / "final-source.tar.gz", logs)
-                    final_saved = True
+                    patch_hash = capture_final_patch(workspace, baseline_repo, baseline_commit, session_dir, logs)
                     write_json(session_dir / "artifacts.json", {
                         "final_patch_sha256": patch_hash,
                         "final_patch_bytes": patch.stat().st_size,
@@ -1749,16 +1806,26 @@ def run_one(
                         "final_source_snapshot": "final-source.tar.gz",
                         "graded": False,
                     })
+                    final_saved = True
             except Exception:
-                write_json(session_dir / "artifact-capture-error.json", {"at_utc": utc_now()})
+                artifact_capture_failed = True
+                write_json(session_dir / "artifact-capture-error.json", {
+                    "at_utc": utc_now(),
+                    "attempt": "fallback",
+                    "source_preserved": True,
+                    "workspace": "workspace",
+                    "baseline_repo": "baseline.git",
+                    "snapshot_present": (session_dir / "final-source.tar.gz").is_file(),
+                })
         if agent_launched:
             remove_container(agent_container, logs)
         cleaned = compose_down(project, env, logs)
         if not cleaned and error is None:
             error = AbortRun("session_cleanup_failed", "The session's own Compose project did not clean up.")
-        if baseline_repo:
+        preserve_source = artifact_capture_failed or not final_saved
+        if baseline_repo and not preserve_source:
             shutil.rmtree(baseline_repo, ignore_errors=True)
-        if workspace.exists():
+        if workspace.exists() and not preserve_source:
             shutil.rmtree(workspace, ignore_errors=True)
         evaluation_workspace = session_dir / "evaluation-source"
         if error is not None and evaluation_workspace.exists():
@@ -1773,7 +1840,7 @@ def run_one(
     outcome = {
         "session": name,
         "position": item["position"],
-        "state": "graded",
+        "state": "unsuccessful" if result.get("status") == "integrity_failure" else "graded",
         "agent_exit_code": load_json(session_dir / "termination.json").get("container_exit_code"),
         "timed_out": load_json(session_dir / "termination.json").get("timed_out") is True,
         "grading": result,

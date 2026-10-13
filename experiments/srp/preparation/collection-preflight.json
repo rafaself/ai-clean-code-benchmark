@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-13",
+  "phase": "revision003 non-model software preflight; excluded from benchmark outcomes",
+  "source": "fresh frozen A + one neutral text file; no task fix",
+  "collection": "full monorepo and frozen dependency cache; preserved source archive and exact new-file patch; fresh evaluation clone matched neutral file",
+  "patch_sha256": "87d74b24a34a3987512f9ebfbdf24edd9a34bc99b704cf872e5b34fd9277d8b2",
+  "source_archive_sha256": "29c279ddff3681a4e18718e711e8e79f21dcb410d60356513bbb2690cc0f9d05",
+  "pipeline_status": "graded",
+  "grading_elapsed_seconds": 69.479,
+  "original_unit_tests_passed": 761,
+  "original_unit_tests_failed": 0,
+  "oracle_regressions_passed": 13,
+  "expected_unmet_T05_cases_failed": 1,
+  "build_exit": 0,
+  "post_build_integrity_passed": true,
+  "harness_unit_fixtures_passed": 15,
+  "fixture_scope": [
+    "actual Git ignored root/nested directories, new and committed files, exact patch apply",
+    "injected collection failure retains snapshot, live source, and baseline",
+    "protected-input change becomes unsuccessful and allows next observation",
+    "scoring test identities/timeouts/integrity and token completeness"
+  ]
+}
