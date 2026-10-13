@@ -24,7 +24,7 @@ computer_use = false
 memories = false
 multi_agent = false
 multi_agent_v2 = false
-code_mode_host = false
+code_mode_host = true
 skill_mcp_dependency_install = false
 
 [permissions.benchmark.filesystem]

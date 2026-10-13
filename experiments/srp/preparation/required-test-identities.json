@@ -1,0 +1,3083 @@
+{
+  "date": "2026-10-13",
+  "phase": "pre-outcome identity guard; tests are unchanged",
+  "unit_source": "readonly baseline unit preflight; all761passed",
+  "required_unit_tests": [
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getParentOfUserCollection should return a user-collection successfully with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getParentOfUserCollection should return null with invalid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getChildrenOfUserCollection should return a list of paginated child REST user-collections with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getChildrenOfUserCollection should return a list of paginated child GQL user-collections with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getChildrenOfUserCollection should return a empty array with a invalid REST collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getChildrenOfUserCollection should return a empty array with a invalid GQL collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserCollection should return a user-collection with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserCollection should throw USER_COLL_NOT_FOUND when collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserCollection should throw USER_COLL_NOT_FOUND when collectionID belongs to a different user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserRootCollections should return a list of paginated root REST user-collections with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserRootCollections should return a list of paginated root GQL user-collections with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserRootCollections should return a empty array with a invalid REST collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "getUserRootCollections should return a empty array with a invalid GQL collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should throw USER_COLL_SHORT_TITLE when title is an empty string"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should throw USER_COLLECTION_CREATION_FAILED when user is not the owner of the parent collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should successfully create a new root REST user-collection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should successfully create a new root GQL user-collection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should successfully create a new child REST user-collection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should successfully create a new child GQL user-collection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should send pubsub message to \"user_coll/<userID>/created\" if child REST user-collection is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should send pubsub message to \"user_coll/<userID>/created\" if child GQL user-collection is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should send pubsub message to \"user_coll/<userID>/created\" if REST root user-collection is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "createUserCollection should send pubsub message to \"user_coll/<userID>/created\" if GQL root user-collection is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "renameUserCollection should throw USER_COLL_SHORT_TITLE when title is empty"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "renameUserCollection should throw USER_NOT_OWNER when user is not the owner of the collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "renameUserCollection should successfully update a user-collection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "renameUserCollection should throw USER_COLL_NOT_FOUND when userCollectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "renameUserCollection should send pubsub message to \"user_coll/<userID>/updated\" if user-collection title is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "deleteUserCollection should successfully delete a user-collection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "deleteUserCollection should throw USER_COLL_NOT_FOUND when collectionID is invalid "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "deleteUserCollection should throw USER_COLL_NOT_FOUND when collectionID belongs to a different user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "deleteUserCollection should throw USER_COLL_REORDERING_FAILED when removeCollectionAndUpdateSiblingsOrderIndex fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "deleteUserCollection should send pubsub message to \"user_coll/<userID>/deleted\" if user-collection is deleted successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_NOT_FOUND if userCollectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_NOT_FOUND if user is not owner of collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_DEST_SAME if userCollectionID and destCollectionID is the same"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_NOT_FOUND if destCollectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_NOT_SAME_TYPE if userCollectionID and destCollectionID are not the same collection type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_NOT_FOUND if destCollectionID belongs to a different user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_IS_PARENT_COLL if userCollectionID is parent of destCollectionID "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COL_ALREADY_ROOT when moving root user-collection to root"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should successfully move a child user-collection into root"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should throw USER_COLL_NOT_FOUND when trying to change parent of collection with invalid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should send pubsub message to \"user_coll/<userID>/moved\" when user-collection is moved to root successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should successfully move a root user-collection into a child user-collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should successfully move a child user-collection into another child user-collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "moveUserCollection should send pubsub message to \"user_coll/<userID>/moved\" when user-collection is moved into another child user-collection successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_SAME_NEXT_COLL if collectionID and nextCollectionID are the same"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_NOT_FOUND if collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_NOT_FOUND if userUID is of a different user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should successfully move the child user-collection to the end of the list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should successfully move the root user-collection to the end of the list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_REORDERING_FAILED when re-ordering operation failed for child user-collection list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should send pubsub message to \"user_coll/<userID>/order_updated\" when user-collection order is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_NOT_SAME_USER when collectionID and nextCollectionID do not belong to the same user account"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_NOT_SAME_TYPE when collectionID and nextCollectionID do not belong to the same collection type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should successfully update the order of the child user-collection list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should throw USER_COLL_REORDERING_FAILED when re-ordering operation failed for child user-collection list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollectionOrder should send pubsub message to \"user_coll/<userID>/order_updated\" when user-collection order is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections SCENARIO: Two users performing concurrent operations on root collections SCENARIO: Alice deletes collection, Bob reorders - operations are isolated"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections SCENARIO: Two users performing concurrent operations on root collections SCENARIO: Both users reorder collections simultaneously - no cross-contamination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections SCENARIO: Two users performing concurrent operations on root collections SCENARIO: Alice moves child to root while Bob deletes root - isolated operations"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections FIXED: moveUserCollection (child to root) - updateMany now filters by userUid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections FIXED: updateUserCollectionOrder (to end) - updateMany now filters by userUid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections FIXED: updateUserCollectionOrder (with nextCollection) - updateMany now filters by userUid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections FIXED: deleteUserCollection - removeCollectionAndUpdateSiblingsOrderIndex now filters by userUid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include userUid filter for root collections FIXED: getCollectionCount - now requires userUid parameter and filters by it"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollection should throw USER_COLL_DATA_INVALID is collection data is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollection should throw USER_COLL_SHORT_TITLE if title is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollection should throw USER_NOT_OWNER is user is not owner of collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollection should throw USER_COLL_NOT_FOUND is collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollection should successfully update a collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "updateUserCollection should send pubsub message to \"user_coll/<userID>/updated\" when UserCollection is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "exportUserCollectionToJSONObject should use DB row id and title over conflicting values in stored request payload"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "exportUserCollectionToJSONObject should throw USER_COLL_NOT_FOUND when collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON \u2014 collection-level script fields preRequestScript and testScript on root and folder survive import \u2192 export round-trip"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getUserMockServers should return user mock servers with pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getUserMockServers should return empty array when no mock servers exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService cast - server URL generation should not append /backend to serverUrlDomainBased when ENABLE_SUBPATH_BASED_ACCESS is not set"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService cast - server URL generation should not append /backend to serverUrlDomainBased when ENABLE_SUBPATH_BASED_ACCESS is \"false\""
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService cast - server URL generation should append /backend to serverUrlDomainBased when ENABLE_SUBPATH_BASED_ACCESS is \"true\""
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService cast - server URL generation should use https protocol and append /backend when secure cookies and subpath access are enabled"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService cast - server URL generation should leave serverUrlDomainBased null and not append /backend when wildcard domain is not configured"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService cast - server URL generation should strip trailing slashes from wildcard domain before appending subpath suffix"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getTeamMockServers should return team mock servers with pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServer should return mock server when user has access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServer should return error when mock server not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServer should return error when user does not have access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServer should allow team member access to team mock server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerBySubdomain should return active mock server by subdomain"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerBySubdomain should return error when mock server not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerCreator should return mock server creator"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerCreator should return error when mock server not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerCollection should return user collection for user workspace"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerCollection should return team collection for team workspace"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerCollection should return null when collection not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should create user mock server successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should persist isPublic: false when input requests a private server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should persist isPublic: true when input requests a public server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should default to private (isPublic: false) when input omits isPublic"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should create team mock server successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should return error when collection not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should return error when team is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should retry subdomain generation on conflict"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer should return creation failed error on non-constraint errors"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should auto-create user collection without request example"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should auto-create user collection with request example"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should auto-create team collection without request example"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should auto-create team collection with request example"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should return error when auto-create user collection fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should return error when auto-create team collection fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should rollback collection on mock server creation failure"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService createMockServer auto-create collection should rollback team collection on mock server creation failure"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService updateMockServer should update mock server successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService updateMockServer should record deactivation analytics"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService updateMockServer should record activation analytics"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService updateMockServer should return error when mock server not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService updateMockServer should return error when user lacks permission"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService deleteMockServer should soft delete mock server successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService deleteMockServer should return error when mock server not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService deleteMockServer should return error when user lacks permission"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService logRequest should log request successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService logRequest should handle logging errors gracefully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerLogs should return logs with pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerLogs should return error when mock server not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService getMockServerLogs should return error when user lacks access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService deleteMockServerLog should delete log successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService deleteMockServerLog should return error when log not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService deleteMockServerLog should return error when user lacks permission"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService incrementHitCount should increment hit count and update last hit timestamp"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService incrementHitCount should handle errors gracefully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should return example by ID header"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should return example by name header"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should filter by status code header"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should match exact path"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should match path with variables"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should return error when no examples found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should prefer 200 status when scores are equal"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should include delay in response"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest should work with team collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService checkMockServerAccess should allow user access to their own mock server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService checkMockServerAccess should deny user access to other users mock server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService checkMockServerAccess should allow team member access to team mock server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService checkMockServerAccess should deny non-member access to team mock server"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService checkMockServerAccess should respect role restrictions"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should parse basic example with path only"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should parse example with query parameters"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should parse example with path variables"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should parse example with path variables and query params"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle endpoint starting with <<"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle endpoint without domain"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should remove domain from endpoint"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should use default values when fields are missing"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should generate ID from requestId and name when key is missing"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle complex path with multiple segments"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should preserve special characters in query parameters"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle root path"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle empty endpoint gracefully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle encoded characters in path"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle multiple query parameters with same key"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle POST method with request body"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should return null on parsing error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle endpoint with port number"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle different HTTP methods"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should preserve endpoint in result"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService parseExample (private method) should handle empty query string"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL matches a GraphQL example by operation name and type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL exact operation-name match beats a wildcard example"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL wildcard example matches an unnamed operation of the same type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL operation type mismatch returns Left"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL matches a large query"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL anonymous multi-operation document without operationName returns 400 errors body"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL multi-operation document with operationName selects the named operation"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL unparseable query falls through to REST matching"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL parseable GraphQL body falls through to REST when no example is operation-stamped"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL x-mock-response-name still resolves when no example is operation-stamped"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL GraphQL operation with no matching stamped example falls back to REST scoring"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL x-mock-response-name override picks the named GraphQL example"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL x-mock-response-name override does not cross operation types"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL treats an empty-string operationName as unspecified"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/mock-server/mock-server.service.spec.ts",
+      "name": "MockServerService handleMockRequest \u2014 GraphQL prefers a 200 example among equal-score matches"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getTeamOfCollection should return the team of a collection successfully with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getTeamOfCollection should throw TEAM_INVALID_COLL_ID when collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getParentOfCollection should return the parent collection successfully for a child collection with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getParentOfCollection should return null successfully for a root collection with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getParentOfCollection should return null with invalid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getChildrenOfCollection should return a list of child collections successfully with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getChildrenOfCollection should return a list of 3 child collections successfully with cursor being equal to the 7th item in the list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getChildrenOfCollection should return a empty array with invalid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getTeamRootCollections should return a list of root collections successfully with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getTeamRootCollections should return a list of 3 root collections successfully with cursor being equal to the 7th item in the list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getTeamRootCollections should return a empty array with invalid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getCollection should return a root TeamCollection with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getCollection should return a child TeamCollection with valid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getCollection should throw TEAM_COLL_NOT_FOUND when collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should throw TEAM_COLL_SHORT_TITLE when title is less than 1 character"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should throw TEAM_NOT_OWNER when parent TeamCollection does not belong to the team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should throw TEAM_COLL_DATA_INVALID when the data is invalid JSON"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should successfully create a new root TeamCollection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should successfully create a new child TeamCollection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should send pubsub message to \"team_coll/<teamID>/coll_added\" if child TeamCollection is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "createCollection should send pubsub message to \"team_coll/<teamID>/coll_added\" if root TeamCollection is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "renameCollection should throw TEAM_COLL_SHORT_TITLE when title is less than 1 character"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "renameCollection should successfully update a TeamCollection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "renameCollection should throw TEAM_COLL_NOT_FOUND when collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "renameCollection should send pubsub message to \"team_coll/<teamId>/coll_updated\" if TeamCollection title is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "deleteCollection should successfully delete a TeamCollection with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "deleteCollection should throw TEAM_COLL_NOT_FOUND when collectionID is invalid "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "deleteCollection should throw TEAM_COL_REORDERING_FAILED when deleteCollectionAndUpdateSiblingsOrderIndex fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "deleteCollection should send pubsub message to \"team_coll/<teamID>/coll_removed\" if TeamCollection is deleted successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COLL_NOT_FOUND if collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COLL_DEST_SAME if collectionID and destCollectionID is the same"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COLL_NOT_FOUND if destCollectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COLL_NOT_SAME_TEAM if collectionID and destCollectionID are not from the same team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COLL_IS_PARENT_COLL if collectionID is parent of destCollectionID "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COL_ALREADY_ROOT when moving root TeamCollection to root"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should successfully move a child TeamCollection into root"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should throw TEAM_COLL_NOT_FOUND when trying to change parent of collection with invalid collectionID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should send pubsub message to \"team_coll/<teamID>/coll_moved\" when a child TeamCollection is moved to root successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should successfully move a root TeamCollection into a child TeamCollection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should send pubsub message to \"team_coll/<teamID>/coll_moved\" when root TeamCollection is moved into another child TeamCollection successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should successfully move a child TeamCollection into another child TeamCollection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "moveCollection should send pubsub message to \"team_coll/<teamID>/coll_moved\" when child TeamCollection is moved into another child TeamCollection successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should throw TEAM_COL_SAME_NEXT_COLL if collectionID and nextCollectionID are the same"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should throw TEAM_COLL_NOT_FOUND if collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should successfully move the child TeamCollection to the end of the list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should successfully move the root TeamCollection to the end of the list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should throw TEAM_COL_REORDERING_FAILED when re-ordering operation failed for child TeamCollection list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should send pubsub message to \"team_coll/<teamID>/coll_order_updated\" when TeamCollection order is updated successfully for a root TeamCollection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should throw TEAM_COLL_NOT_SAME_TEAM when collectionID and nextCollectionID do not belong to the same team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should throw TEAM_COLL_NOT_SAME_PARENT if collection and nextCollection have different parents"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should not reorder when collection and nextCollection have different parents"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should successfully update the order of the child TeamCollection list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should successfully update the order of the root TeamCollection list"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should throw TEAM_COL_REORDERING_FAILED when re-ordering operation failed with nextCollection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateCollectionOrder should send pubsub message to \"team_coll/<teamID>/coll_order_updated\" when TeamCollection order is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON should throw TEAM_COLL_INVALID_JSON when the jsonString is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON should throw TEAM_COLL_INVALID_JSON when the parsed jsonString is not an array"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON should throw TEAM_NOT_OWNER when the parent collection does not belong to the team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON should successfully create new TeamCollections in root and TeamRequests with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON should successfully create new TeamCollections in a child collection and TeamRequests with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "importCollectionsFromJSON should send pubsub message to \"team_coll/<teamID>/coll_added\" on successful creation from jsonString"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "totalCollectionsInTeam should resolve right and return a total team colls count "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "totalCollectionsInTeam should resolve left and return an error when no team colls found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "totalCollectionsInTeam getTeamCollectionsCount should return count of all Team Collections in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateTeamCollection should throw TEAM_COLL_SHORT_TITLE if title is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateTeamCollection should throw TEAM_COLL_DATA_INVALID is collection data is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateTeamCollection should throw TEAM_COLL_NOT_FOUND is collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateTeamCollection should successfully update a collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "updateTeamCollection should send pubsub message to \"team_coll/<teamID>/coll_updated\" if TeamCollection is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "sortTeamCollections should sort collections by TITLE_ASC"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "sortTeamCollections should sort collections by TITLE_DESC"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "sortTeamCollections should return left(TEAM_COL_REORDERING_FAILED) on error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include teamID filter for root collections FIX: deleteCollection - updateMany now correctly filters by teamID for root collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include teamID filter for root collections FIX: updateCollectionOrder (to end) - updateMany now correctly filters by teamID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include teamID filter for root collections FIX: updateCollectionOrder (with nextCollection) - updateMany now correctly filters by teamID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "FIX: updateMany queries now include teamID filter for root collections FIX: getCollectionCount - now correctly filters by teamID for root collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "SCENARIO: Two teams performing concurrent operations on root collections SCENARIO: Team 1 deletes root collection - operations are now isolated from Team 2"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "SCENARIO: Two teams performing concurrent operations on root collections SCENARIO: Team 2 reorders root collection - operations are isolated from Team 1"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "SCENARIO: Two teams performing concurrent operations on root collections SCENARIO: Both teams reorder collections concurrently - each team isolated"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getCollectionForCLI should throw TEAM_COLL_NOT_FOUND if collectionID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-collection/team-collection.service.spec.ts",
+      "name": "getCollectionForCLI should throw TEAM_MEMBER_NOT_FOUND if user not in same team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocByID should return a published document with valid ID and user access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocByID should throw PUBLISHED_DOCS_NOT_FOUND when ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocByID should throw PUBLISHED_DOCS_NOT_FOUND when user does not have access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocByID should return team published document when user has team access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocByID should throw PUBLISHED_DOCS_NOT_FOUND when user does not have team access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllUserPublishedDocs should return a list of user published documents with pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllUserPublishedDocs should return an empty array when no documents found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllUserPublishedDocs should return paginated results correctly"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllUserPublishedDocs should filter out published docs with non-existent collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllUserPublishedDocs should delete published docs with non-existent collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllUserPublishedDocs should not call deleteMany when all collections exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllTeamPublishedDocs should return a list of team published documents with pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllTeamPublishedDocs should return an empty array when no team documents found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllTeamPublishedDocs should filter by teamID and collectionID correctly"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllTeamPublishedDocs should filter out published docs with non-existent team collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllTeamPublishedDocs should delete published docs with non-existent team collections"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getAllTeamPublishedDocs should not call deleteMany when all team collections exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should successfully create a user published document with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should successfully create a team published document with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw TEAM_INVALID_ID when team ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw TEAM_INVALID_ID when user does not have team access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw PUBLISHED_DOCS_INVALID_COLLECTION when user collection is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw PUBLISHED_DOCS_INVALID_COLLECTION when team collection is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw PUBLISHED_DOCS_INVALID_COLLECTION when collection does not belong to user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw error when metadata is invalid JSON"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc should throw PUBLISHED_DOCS_CREATION_FAILED on database error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should successfully update a published document with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should throw PUBLISHED_DOCS_NOT_FOUND when document ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should throw PUBLISHED_DOCS_UPDATE_FAILED when user does not have access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should throw PUBLISHED_DOCS_UPDATE_FAILED when user is not OWNER or EDITOR of team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should successfully update team published document when user has OWNER role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should successfully update team published document when user has EDITOR role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should throw error when metadata is invalid JSON"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should update only provided fields"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc should throw PUBLISHED_DOCS_UPDATE_FAILED on database error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should successfully delete a user published document"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should successfully delete a team published document when user has OWNER role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should successfully delete a team published document when user has EDITOR role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should throw PUBLISHED_DOCS_NOT_FOUND when document ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should throw PUBLISHED_DOCS_DELETION_FAILED when user does not have access"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should throw PUBLISHED_DOCS_DELETION_FAILED when user is not OWNER or EDITOR of team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "deletePublishedDoc should throw PUBLISHED_DOCS_DELETION_FAILED on database error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCreator should return the creator of a published document"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCreator should throw PUBLISHED_DOCS_NOT_FOUND when document ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCollection should return user collection for user workspace published document"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCollection should return team collection for team workspace published document"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCollection should throw PUBLISHED_DOCS_NOT_FOUND when document ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCollection should throw PUBLISHED_DOCS_INVALID_COLLECTION when user collection is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsCollection should throw PUBLISHED_DOCS_INVALID_COLLECTION when team collection is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "checkPublishedDocsAccess should return true for user workspace when user is the creator"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "checkPublishedDocsAccess should return false for user workspace when user is not the creator"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "checkPublishedDocsAccess should return true for team workspace when user has required role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "checkPublishedDocsAccess should return false for team workspace when user does not have required role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "checkPublishedDocsAccess should check for VIEWER role by default"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsVersions should return all versions for a given slug ordered by autoSync and createdOn"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsVersions should return PUBLISHED_DOCS_NOT_FOUND when no versions found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocsVersions should query with correct orderBy clause for autoSync priority"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic should return published document by slug and version with autoSync enabled"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic should return published document with stored documentTree when autoSync is false"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic should throw PUBLISHED_DOCS_NOT_FOUND when slug and version combination not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic should use unique constraint slug_version for lookup"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic should fetch all versions for the slug"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic should use first version as default when no version specified and versions exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should generate new slug for first version of a collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should reuse existing slug for subsequent versions of same collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should retry on race condition (P2002 error) up to 3 times"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should fail after max retries (3 attempts)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should not retry on non-P2002 errors"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should store null documentTree when autoSync is true"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - slug generation and race conditions should fetch and store documentTree when autoSync is false"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - environment support should create published doc with environment for user workspace"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - environment support should create published doc with environment for team workspace"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - environment support should return error when user environment ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - environment support should return error when team environment ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "createPublishedDoc - environment support should create published doc without environment when environmentID is not provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc - environment support should update published doc with new environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc - environment support should remove environment when environmentID is set to null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc - environment support should return error when updating with invalid environment ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc - environment support should not change environment when environmentID is not provided in update args"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "updatePublishedDoc - environment support should update environment for team published doc"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic - environment support should re-fetch environment when autoSync is true and environmentID is set"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic - environment support should not re-fetch environment when autoSync is false"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic - environment support should not re-fetch environment when autoSync is true but no environmentID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic - environment support should return error when re-fetch of environment fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "getPublishedDocBySlugPublic - environment support should return null environment fields when no environment is associated"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "cast - environment stringification should stringify environmentVariables in cast output"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+      "name": "cast - environment stringification should return null environmentVariables when not set"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getCountOfUsersWithRoleInTeam resolves to the correct count of owners in a team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getCountOfUsersWithRoleInTeam resolves to the correct count of viewers in a team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getCountOfUsersWithRoleInTeam resolves to the correct count of editors in a team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeam resolves when proper team id is given"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeam makes the update in the database"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeam fires \"team/<team_id>/member_added\" pubsub message with correct payload"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeamWithEmail resolves when user with email exists"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeamWithEmail rejects with user with email doesn't exist with USER_NOT_FOUND"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeamWithEmail makes update in the database"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "addMemberToTeamWithEmail fires \"team/<team_id>/member_added\" pubsub message with correct payload"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteTeam resolves for proper deletion"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteTeam performs deletion on database"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteTeam rejects for invalid team id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "renameTeam resolves for proper rename"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "renameTeam resolves with team structure"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "renameTeam performs rename on database"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "renameTeam rejects for invalid team id with TEAM_INVALID_ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "renameTeam rejects for new team name empty with TEAM_NAME_INVALID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "updateTeamAccessRole updates the role"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "updateTeamAccessRole returns the updated details"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "updateTeamAccessRole rejects if you change the status of the sole owner to non-owner status with TEAM_ONLY_ONE_OWNER"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "updateTeamAccessRole resolves if you change the status of the sole owner to owner status (no change)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "updateTeamAccessRole resolves if you change the status of an owner but there are other owners"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "updateTeamAccessRole fires \"team/<team_id>/member_updated\" pubsub message with correct payload"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "leaveTeam removes the user if valid credentials given"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "leaveTeam rejects if invalid teamId with TEAM_INVALID_ID_OR_USER"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "leaveTeam rejects if invalid userUid with TEAM_INVALID_ID_OR_USER"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "leaveTeam rejects if the removed user is the sole owner of the team with TEAM_ONLY_ONE_OWNER"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "leaveTeam resolves if the removed user is an owner (but not the sole) of the team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "leaveTeam fires \"team/<team_id>/member_removed\" pubsub message with correct payload"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "createTeam adds the new team to the db"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "createTeam adds the creator to team and set them as OWNER"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "createTeam resolves with the team info"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "createTeam rejects for team name empty with TEAM_NAME_INVALID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamWithID resolves for a proper team id with the proper details"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamWithID resolves for a invalid team id as null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamMember resolves for a proper team id and user uid and returns the info"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamMember resolves for a invalid team id and proper uid and returns null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getRoleOfUserInTeam resolves with the correct role value"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getRoleOfUserInTeam resolves with null if user is not found in team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getRoleOfUserInTeam resolves with null if team does not exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getMembersOfTeam resolves for the team id and null cursor with the first page"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getMembersOfTeam resolves for the team id and proper cursor with pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getMembersOfTeam resolves with an empty array for invalid team id and null cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getMembersOfTeam resolves with an empty array for an invalid team id and invalid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamsOfUser resolves with the first 10 elements when no cursor is given"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamsOfUser resolves as expected for paginated requests with cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamsOfUser resolves with an empty array for an invalid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamsOfUser resolves with an empty array for invalid user id and null cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getTeamsOfUser resolves with an empty array for invalid user id and invalid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteUserFromAllTeams should return undefined when a valid uid is passed and user is deleted from all teams"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteUserFromAllTeams should return undefined when user has no data or the uid is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteUserFromAllTeams should reject when user is an OWNER in a team with only 1 member"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "deleteUserFromAllTeams should reject when a valid uid is passed but fetching teamMember details errors out"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeams should resolve right and return 20 teams when cursor is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeams should resolve right and return next 20 teams when cursor is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeams should resolve left and return an empty array when users not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeamsV2 should return teams with offset pagination when no search string"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeamsV2 should search by name and id when search string is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeamsV2 should apply skip for pagination"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "fetchAllTeamsV2 should return empty array when no teams match"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getCountOfMembersInTeam should resolve right and return a total team member count "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getCountOfMembersInTeam should resolve left and return an error when no team members found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+      "name": "getCountOfMembersInTeam getTeamsCount should return count of all teams in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest resolves correctly if title not given in parameter"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest resolves correctly if request not given in parameter"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest resolves correctly if both request and title are null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest resolves correctly for non-null request and title"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest rejects for invalid request id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest resolves for valid request id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "updateTeamRequest publishes update to pubsub topic \"team_req/<team_id>/req_updated\""
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "searchRequest resolves with the correct info with a null cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "searchRequest resolves with an empty array when a match with the search term is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "searchRequest resolves with the correct info with a set cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "deleteTeamRequest rejects if the request id is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "deleteTeamRequest resolves for a valid request id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "deleteTeamRequest publishes deletion to pubsub topic \"team_req/<team_id>/req_deleted\""
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "createTeamRequest rejects for invalid collection id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "createTeamRequest resolves for valid collection id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "createTeamRequest publishes creation to pubsub topic \"team_req/<team_id>/req_created\""
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequestsInCollection resolves with an empty array if the collection id does not exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequestsInCollection resolves with the correct info for the collection id and null cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequestsInCollection resolves with the correct info for the collection id and a valid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequestsInCollection paginates on the orderIndex of the cursor item, scoped to the collection"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequestsInCollection resolves with an empty array when cursor is provided but cursor item is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequestsInCollection does not look up a cursor item when no cursor is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequest resolves with the correct request info for valid request id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getRequest resolves with null if the request id does not exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getTeamOfRequest rejects for invalid team id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getTeamOfRequest resolves for valid team id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getCollectionOfRequest rejects for invalid collection id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getCollectionOfRequest resolves for valid collection id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getTeamOfRequestFromID rejects for invalid request id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getTeamOfRequestFromID resolves for valid request id"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "reorderRequests Should resolve left if transaction throws an error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "reorderRequests Should resolve right and call transaction with the correct data"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve right if the request and the next request are found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve right if the request and next request null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve left if the destination collection does not exist when nextRequestID is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve left if the destination collection belongs to a different team when nextRequestID is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve left if the destination collection does not exist when nextRequestID is given"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve left if the destination collection belongs to a different team when nextRequestID is given"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve left if the request is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "findRequestAndNextRequest Should resolve left if the nextRequest is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "moveRequest Should resolve right and the request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "moveRequest Should resolve right and publish message to pubnub if callerFunction is moveRequest"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "moveRequest Should resolve right and publish message to pubnub if callerFunction is updateLookUpRequestOrder"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "moveRequest Should resolve left if finding the requests fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "moveRequest Should resolve left if mismatch team/collection of requests fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "moveRequest Should resolve left if reorder fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "totalRequestsInATeam should resolve right and return a total team reqs count "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "totalRequestsInATeam should resolve left and return an error when no team reqs found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "getTeamRequestsCount should return count of all Team Collections in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "sortTeamRequests should resolve right if collectionID is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "sortTeamRequests should resolve right and sorts team requests by TITLE_ASC"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "sortTeamRequests should resolve right and sorts team requests by TITLE_DESC"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+      "name": "sortTeamRequests should returns left(TEAM_REQ_REORDERING_FAILED) on error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService fetchUserRequests Should resolve right and fetch user requests (with collection ID)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService fetchUserRequests Should resolve right and fetch user requests (with collection ID and take)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService fetchUserRequests Should resolve right and fetch user requests (with all params)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService fetchUserRequest Should resolve right and fetch user request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService fetchUserRequest Should resolve left if user request not exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService fetchUserRequest Should resolve left if another users user-request asked"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService createRequest Should resolve right and create user request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService createRequest Should execute prisma.create() with correct params"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService createRequest Should publish user request created message in pubnub"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService createRequest Should resolve left for json-invalid request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService updateRequest Should resolve right and update user request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService updateRequest Should resolve right and perform prisma.update with correct param"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService updateRequest Should resolve right and publish to pubnub with correct param"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService updateRequest Should resolve left if user request not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService updateRequest Should resolve left if stringToJson returns error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService deleteRequest Should resolve right and delete user request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService deleteRequest Should resolve right and perform prisma.delete with correct param"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService deleteRequest Should resolve right and perform prisma.updateMany with correct param"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService deleteRequest Should resolve and publish message to pubnub"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService deleteRequest Should resolve error if the user request is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService reorderRequests Should resolve left if transaction throws an error"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService reorderRequests Should resolve right and call transaction with the correct data"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService findRequestAndNextRequest Should resolve right if the request and the next request are found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService findRequestAndNextRequest Should resolve right if the request and next request null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService findRequestAndNextRequest Should resolve left if the request is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService findRequestAndNextRequest Should resolve left if the nextRequest is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService moveRequest Should resolve right and the request"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService moveRequest Should resolve right and publish message to pubnub"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService moveRequest Should resolve left if finding the requests fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService moveRequest Should resolve left if reordering the request fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-request/user-request.service.spec.ts",
+      "name": "UserRequestService validateTypeEqualityForMoveRequest Should resolve right if the types are equal"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService findUserByEmail should successfully return a valid user given a valid email"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService findUserByEmail should return a null user given a invalid email"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService findUserById should successfully return a valid user given a valid user uid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService findUserById should return a null user given a invalid user uid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService findUsersByIds should successfully return users given valid user UIDs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService findUsersByIds should return empty array of users given a invalid user UIDs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createUserViaMagicLink should successfully create user and account for magic-link given valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createUserSSO should successfully create user and account for SSO provider given valid inputs  "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createUserSSO should successfully create user and account for SSO provider given no displayName  "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createUserSSO should successfully create user and account for SSO provider given no photoURL  "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createProviderAccount should successfully create ProviderAccount for user given valid inputs "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createProviderAccount should successfully create ProviderAccount for user given no accessToken "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService createProviderAccount should successfully create ProviderAccount for user given no refreshToken"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserSessions Should resolve right and update users GQL session"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserSessions Should resolve right and update users REST session"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserSessions Should reject left and update user for invalid GQL session"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserSessions Should reject left and update user for invalid REST session"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserSessions Should publish pubsub message on user update sessions"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserDisplayName should resolve right and update user display name"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserDisplayName should resolve right and publish user updated subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserDisplayName should resolve left and error when invalid user uid is passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserDisplayName should resolve left and error when short display name is passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserLastLoggedOn should resolve right and update user last logged on"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService updateUserLastLoggedOn should resolve left and error when invalid user uid is passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAllUsers should resolve right and return 20 users when cursor is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAllUsers should resolve right and return next 20 users when cursor is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAllUsers should resolve left and return an empty array when users not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAllUsersV2 should resolve right and return first 20 users when searchString is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAllUsersV2 should resolve right and return next 20 users when searchString is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAllUsersV2 should resolve left and return an empty array when users not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAdminUsers should return a list of admin users"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService fetchAdminUsers should return null when no admin users found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService makeAdmin should resolve right and return a user object after making a user admin"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService makeAdmin should resolve left and error when invalid user uid is passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService deleteUserByID should resolve right for valid user uid and perform successful user deletion"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService deleteUserByID should resolve right for successful deletion and publish user deleted subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService deleteUserByID should resolve left when one or both the handlers don't allow userDeletion"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService deleteUserByID should resolve left when there is an unsuccessful deletion of userdata from firestore"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService getUsersCount should return count of all users in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService removeUsersAsAdmin should resolve right and return true for valid user UIDs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user/user.service.spec.ts",
+      "name": "UserService removeUsersAsAdmin should resolve right and return false for invalid user UIDs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService fetchUserHistory Should return a list of users REST history if exists"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService fetchUserHistory Should return a list of users GQL history if exists"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService fetchUserHistory Should return an empty list of users REST history if doesnt exists"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService fetchUserHistory Should return an empty list of users GQL history if doesnt exists"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService createUserHistory Should resolve right and create a REST request to users history and return a `UserHistory` object"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService createUserHistory Should resolve right and create a GQL request to users history and return a `UserHistory` object"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService createUserHistory Should resolve left when invalid ReqType is passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService createUserHistory Should create a GQL request to users history and publish a created subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService createUserHistory Should create a REST request to users history and publish a created subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService toggleHistoryStarStatus Should resolve right and star/unstar a request in the history"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService toggleHistoryStarStatus Should resolve left and error out due to invalid user history request ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService toggleHistoryStarStatus Should star/unstar a request in the history and publish a updated subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService toggleHistoryStarStatus Should scope the lookup and the update to the requesting user (ownership enforcement)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService toggleHistoryStarStatus Should resolve left when the history entry is not owned by the requesting user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService removeRequestFromHistory Should resolve right and delete request from users history"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService removeRequestFromHistory Should resolve left and error out when req id is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService removeRequestFromHistory Should delete request from users history and publish deleted subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService removeRequestFromHistory Should scope the delete to the requesting user (ownership enforcement)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService removeRequestFromHistory Should resolve left when deleting a history entry not owned by the requesting user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllUserHistory Should resolve right and delete all user REST history for a request type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllUserHistory Should resolve right and delete all user GQL history for a request type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllUserHistory Should resolve left and error when ReqType is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllUserHistory Should delete all user REST history for a request type and publish deleted many subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllUserHistory Should delete all user GQL history for a request type and publish deleted many subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllHistories Should resolve right and delete all user history"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService deleteAllHistories Should publish all user history delete event"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService validateReqType Should resolve right when a valid REST ReqType is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService validateReqType Should resolve right when a valid GQL ReqType is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-history/user-history.service.spec.ts",
+      "name": "UserHistoryService validateReqType Should resolve left and error out when a invalid ReqType is provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService update should update the infra config without backend server restart"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService update should update the infra config with backend server restart"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService update should update the infra config"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService update should pass correct params to prisma update"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService update should throw an error if the infra config update failed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService get should get the infra config"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService get should pass correct params to prisma findUnique"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService get should throw an error if the infra config does not exist"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getMany should throw error if any disallowed names are provided"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getMany should resolve right with disallowed names if `checkDisallowed` parameter passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getMany should return right with infraConfigs if Prisma query succeeds"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService toggleServiceStatus should toggle the service status"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService toggleServiceStatus should publish the updated config value"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService updateOnboardingConfig (allowlist filtering) should drop keys outside ONBOARDING_ALLOWED_KEYS before persisting"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService isUserHistoryEnabled should return true if the user history is enabled"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService validateEnvValues MAILER_SMTP_AUTH_TYPE should accept an empty value (defaults to login at runtime)"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService validateEnvValues MAILER_SMTP_AUTH_TYPE should accept a known auth type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService validateEnvValues MAILER_SMTP_AUTH_TYPE should reject an unknown auth type"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService validateEnvValues MAILER_SMTP_OAUTH2_ACCESS_URL should accept an empty value"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService validateEnvValues MAILER_SMTP_OAUTH2_ACCESS_URL should accept a valid HTTPS URL"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService validateEnvValues MAILER_SMTP_OAUTH2_ACCESS_URL should reject a malformed URL"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return config values when token is valid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token does not match"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token is empty string"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token is whitespace only"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token is null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token is undefined"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token is an array"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when token is a number"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return null values when ONBOARDING_RECOVERY_TOKEN is absent from configs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+      "name": "InfraConfigService getOnboardingConfig should return left with error when getMany fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService getShortCode should return a valid Shortcode with valid Shortcode ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService getShortCode should throw SHORTCODE_NOT_FOUND error when shortcode ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchUserShortCodes should return list of Shortcode with valid inputs and no cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchUserShortCodes should return list of Shortcode with valid inputs and cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchUserShortCodes should return an empty array for an invalid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchUserShortCodes should return an empty array for an invalid user id and null cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchUserShortCodes should return an empty array for an invalid user id and an invalid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService createShortcode should throw SHORTCODE_INVALID_REQUEST_JSON error if incoming request data is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService createShortcode should throw SHORTCODE_INVALID_PROPERTIES_JSON error if incoming properties data is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService createShortcode should successfully create a new Embed with valid user uid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService createShortcode should successfully create a new ShortCode with valid user uid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService createShortcode should send pubsub message to `shortcode/{uid}/created` on successful creation of a Shortcode"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService createShortcode should send pubsub message to `shortcode/{uid}/created` on successful creation of an Embed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService revokeShortCode should return true on successful deletion of Shortcode with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService revokeShortCode should return SHORTCODE_NOT_FOUND error when Shortcode is invalid and user uid is valid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService revokeShortCode should return SHORTCODE_NOT_FOUND error when Shortcode is valid and user uid is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService revokeShortCode should return SHORTCODE_NOT_FOUND error when both Shortcode and user uid are invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService revokeShortCode should send pubsub message to `shortcode/{uid}/revoked` on successful deletion of Shortcode"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService deleteUserShortCodes should successfully delete all users Shortcodes with valid user uid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService deleteUserShortCodes should return 0 when user uid is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService updateShortcode should return SHORTCODE_PROPERTIES_NOT_FOUND error when updatedProps in invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService updateShortcode should return SHORTCODE_PROPERTIES_NOT_FOUND error when updatedProps in invalid JSON format"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService updateShortcode should return SHORTCODE_NOT_FOUND error when Shortcode ID is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService updateShortcode should successfully update a Shortcodes with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService updateShortcode should send pubsub message to `shortcode/{uid}/updated` on successful Update of Shortcode"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService deleteShortcode should return true on successful deletion of Shortcode with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService deleteShortcode should return SHORTCODE_NOT_FOUND error when Shortcode is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchAllShortcodes should return list of Shortcodes with valid inputs and no cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchAllShortcodes should return list of Shortcode with valid inputs and cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/shortcode/shortcode.service.spec.ts",
+      "name": "ShortcodeService fetchAllShortcodes should return an empty array for an invalid cursor"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService fetchUserEnvironments Should return a list of users personal environments"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService fetchUserEnvironments Should return an empty list of users personal environments"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService fetchUserEnvironments Should return an empty list of users personal environments if user uid is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService fetchUserGlobalEnvironment Should resolve right and return a Global Environment for the uid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService fetchUserGlobalEnvironment Should resolve left and return an error if global env it doesnt exists"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService createUserEnvironment Should resolve right and create a users personal environment and return a `UserEnvironment` object "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService createUserEnvironment Should resolve right and create a new users global environment and return a `UserEnvironment` object "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService createUserEnvironment Should resolve left and not create a new users global environment if existing global env exists "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService createUserEnvironment Should resolve left when an invalid personal environment name has been passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService createUserEnvironment Should create a users personal environment and publish a created subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService createUserEnvironment Should create a users global environment and publish a created subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService UpdateUserEnvironment Should resolve right and update a users personal or environment and return a `UserEnvironment` object "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService UpdateUserEnvironment Should resolve right and update a users global environment and return a `UserEnvironment` object "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService UpdateUserEnvironment Should resolve left and not update a users environment if env doesnt exist "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService UpdateUserEnvironment Should update a users personal environment and publish an updated subscription "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService UpdateUserEnvironment Should update a users global environment and publish an updated subscription "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService deleteUserEnvironment Should resolve right and delete a users personal environment and return a `UserEnvironment` object "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService deleteUserEnvironment Should resolve left and return an error when deleting a global user environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService deleteUserEnvironment Should resolve left and return an error when deleting an invalid user environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService deleteUserEnvironment Should resolve right, delete a users personal environment and publish a deleted subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService deleteUserEnvironments Should publish a subscription with a count of deleted environments"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService clearGlobalEnvironments Should resolve right and delete all variables inside users global environment and return a `UserEnvironment` object"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService clearGlobalEnvironments Should resolve left and return an error if global environment id and passed id dont match"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-environment/user-environments.service.spec.ts",
+      "name": "UserEnvironmentsService clearGlobalEnvironments Should resolve right,delete all variables inside users global environment and publish an updated subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "signInMagicLink Should throw error if email is not in valid format"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "signInMagicLink Should successfully create a new user account and return the passwordless details"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "signInMagicLink Should successfully return the passwordless details for a pre-existing user account"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should throw INVALID_MAGIC_LINK_DATA if data is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should throw USER_NOT_FOUND if user is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should successfully return auth token pair with provider account existing"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should successfully return auth token pair with provider account not existing"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should throw MAGIC_LINK_EXPIRED if passwordless token is expired"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should throw USER_NOT_FOUND when updating refresh tokens fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyMagicLinkTokens Should throw PASSWORDLESS_DATA_NOT_FOUND when deleting passwordlessVerification entry from DB"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "generateAuthTokens Should successfully generate tokens with valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "generateAuthTokens Should throw USER_NOT_FOUND when updating refresh tokens fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "refreshAuthTokens Should throw USER_NOT_FOUND when updating refresh tokens fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "refreshAuthTokens Should throw USER_NOT_FOUND when user is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "refreshAuthTokens Should successfully refresh the tokens and generate a new auth token pair"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "refreshAuthTokens Should throw INVALID_REFRESH_TOKEN when the refresh token is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyAdmin should successfully elevate user to admin when userCount is 1 "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyAdmin should return true if user is already an admin"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyAdmin should throw USERS_NOT_FOUND when userUid is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/auth.service.spec.ts",
+      "name": "verifyAdmin should return false when user is not an admin and userCount is greater than 1"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService getTeamEnvironment should successfully return a TeamEnvironment with valid ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService getTeamEnvironment should throw TEAM_ENVIRONMENT_NOT_FOUND with invalid ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService createTeamEnvironment should successfully create and return a new team environment given valid inputs"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService createTeamEnvironment should throw TEAM_ENVIRONMENT_SHORT_NAME if input TeamEnvironment name is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService createTeamEnvironment should send pubsub message to \"team_environment/<teamID>/created\" if team environment is created successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService deleteTeamEnvironment should successfully delete a TeamEnvironment with a valid ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService deleteTeamEnvironment should throw TEAM_ENVIRONMMENT_NOT_FOUND if given id is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService deleteTeamEnvironment should send pubsub message to \"team_environment/<teamID>/deleted\" if team environment is deleted successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should successfully add new variable to a team environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should successfully add new variable to already existing list of variables in a team environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should successfully edit existing variables in a team environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should successfully edit name of an existing team environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should throw TEAM_ENVIRONMENT_SHORT_NAME if input TeamEnvironment name is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should throw TEAM_ENVIRONMMENT_NOT_FOUND if provided id is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService updateVariablesInTeamEnvironment should send pubsub message to \"team_environment/<teamID>/updated\" if team environment is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService deleteAllVariablesFromTeamEnvironment should successfully delete all variables in a team environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService deleteAllVariablesFromTeamEnvironment should throw TEAM_ENVIRONMMENT_NOT_FOUND if provided id is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService deleteAllVariablesFromTeamEnvironment should send pubsub message to \"team_environment/<teamID>/updated\" if team environment is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService createDuplicateEnvironment should successfully duplicate an existing team environment"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService createDuplicateEnvironment should throw TEAM_ENVIRONMMENT_NOT_FOUND if provided id is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService createDuplicateEnvironment should send pubsub message to \"team_environment/<teamID>/created\" if team environment is updated successfully"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService totalEnvsInTeam should resolve right and return a total team envs count "
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService totalEnvsInTeam should resolve left and return an error when no team envs found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService getTeamEnvironmentForCLI should successfully return a TeamEnvironment with valid ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService getTeamEnvironmentForCLI should throw TEAM_ENVIRONMENT_NOT_FOUND with invalid ID"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/team-environments/team-environments.service.spec.ts",
+      "name": "TeamEnvironmentsService getTeamEnvironmentForCLI should throw TEAM_MEMBER_NOT_FOUND if user not in same team"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService fetchInvitedUsers should resolve right and apply pagination correctly"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService fetchInvitedUsers should resolve right and return an array of invited users"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService fetchInvitedUsers should resolve left and return an empty array if invited users not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService inviteUserToSignInViaEmail should resolve right and create a invited user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService inviteUserToSignInViaEmail should resolve right, create a invited user and publish a subscription"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService inviteUserToSignInViaEmail should resolve left and return an error when invalid invitee email is passed"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService inviteUserToSignInViaEmail should resolve left and return an error when user already invited"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService inviteUserToSignInViaEmail should resolve left and return an error when invitee and admin email is same"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService revokeUserInvitations should resolve left and return error if email not invited"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService revokeUserInvitations should resolve right and return deleted invitee email"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService removeUsersAsAdmin should resolve right and make admins to users"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService removeUsersAsAdmin should resolve left and return error if only one admin in the infra"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService getUsersCount should return count of all users in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService getTeamsCount should return count of all teams in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService getTeamCollectionsCount should return count of all Team Collections in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService getTeamRequestsCount should return count of all Team Collections in the organization"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/admin/admin.service.spec.ts",
+      "name": "AdminService deleteAllUserHistory should resolve right and delete all user history"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService createPAT should throw ACCESS_TOKEN_LABEL_SHORT if label is too short"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService createPAT should throw ACCESS_TOKEN_EXPIRY_INVALID if expiry date is invalid"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService createPAT should successfully create a new Access Token"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService deletePAT should throw ACCESS_TOKEN_NOT_FOUND if Access Token is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService deletePAT should successfully delete a new Access Token"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService deletePAT should throw ACCESS_TOKEN_NOT_FOUND when token belongs to a different user"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService listAllUserPAT should successfully return a list of user Access Tokens"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService getUserPAT should throw ACCESS_TOKEN_NOT_FOUND if Access Token is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService getUserPAT should successfully return a user Access Tokens"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService updateLastUsedforPAT should throw ACCESS_TOKEN_NOT_FOUND if Access Token is not found"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/access-token/access-token.service.spec.ts",
+      "name": "AccessTokenService updateLastUsedforPAT should successfully update lastUsedOn for a user Access Tokens"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortTeamCollections should return left if teamCollectionService.sortTeamCollections fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortTeamCollections should return left if teamRequestService.sortTeamRequests fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortTeamCollections should publish root event if parentCollectionID is falsy"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortTeamCollections should publish child event if parentCollectionID is truthy"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortUserCollections should return left if userCollectionService.sortUserCollections fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortUserCollections should return left if userRequestService.sortUserRequests fails"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortUserCollections should publish root event if parentCollectionID is falsy"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/orchestration/sort/sort.service.spec.ts",
+      "name": "sortUserCollections should publish child event if parentCollectionID is truthy"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService createUserSettings Should resolve right and create an user setting with valid user and properties"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService createUserSettings Should reject user settings creation for invalid properties"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService createUserSettings Should reject user settings creation for null properties"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService createUserSettings Should publish pubsub message on successful user settings create"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService updateUserSettings Should update a user setting for valid user and settings"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService updateUserSettings Should reject user settings updation for invalid stringified JSON settings"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService updateUserSettings Should reject user settings updation for null properties"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/user-settings/user-settings.service.spec.ts",
+      "name": "UserSettingsService updateUserSettings Should publish pubsub message on successful user settings update"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri valid loopback URIs Should return true for http://localhost with a port"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri valid loopback URIs Should return true for http://localhost without a port"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri valid loopback URIs Should return true for http://127.0.0.1 with a port"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri valid loopback URIs Should return true for http://[::1] IPv6 loopback"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri DNS wildcard bypass vectors Should reject localhost subdomain via sslip.io wildcard DNS"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri DNS wildcard bypass vectors Should reject localhost subdomain via nip.io wildcard DNS"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri DNS wildcard bypass vectors Should reject localhost as a subdomain of attacker domain"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri DNS wildcard bypass vectors Should reject localhost with trailing dot FQDN trick"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri DNS wildcard bypass vectors Should reject domain that starts with localhost string"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri protocol enforcement Should reject https since loopback listeners do not serve TLS"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri protocol enforcement Should reject ftp protocol"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri credential and remote host rejection Should reject URL with embedded credentials"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri credential and remote host rejection Should reject an arbitrary remote host"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri credential and remote host rejection Should reject 0.0.0.0 since it is not a loopback address"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri malformed and empty input Should return false for empty string"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri malformed and empty input Should return false for undefined"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri malformed and empty input Should return false for null"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri malformed and empty input Should return false for a plain string that is not a URL"
+    },
+    {
+      "file": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+      "name": "isValidLocalhostRedirectUri malformed and empty input Should return false for a relative path"
+    }
+  ],
+  "oracle_cases": [
+    "RG R01 CRUD state, hierarchy and notification contract",
+    "RG R02 valid nested import persists data and root events",
+    "RG R03 import parent ownership, missing parent and invalid JSON errors",
+    "RG R04 failed import rolls back earlier roots and publishes nothing",
+    "RG R05 move rejects cycles, self and cross-team destinations",
+    "RG R06 move child to root preserves records and event payload",
+    "RG R07 root deletion and reordering are isolated by team",
+    "RG R08 title sorts retain existing order and scope",
+    "RG R09 CLI retrieval requires membership and includes requests",
+    "RG R10 REST guard authorizes membership and rejects foreign users",
+    "RG R11 GraphQL collection guard checks role and team membership",
+    "RG R12 missing collections and invalid titles/data preserve errors",
+    "RG R13 search preserves literal matching, ancestry, grouping and isolation",
+    "T01 canonical nested request metadata (object payload)",
+    "T01 canonical nested request metadata (string payload)",
+    "T01 duplication carries canonical nested request names into new rows",
+    "T02 roots follow orderIndex then ID, regardless of insertion order",
+    "T03 invalid nested structure 0 rejected before transaction",
+    "T03 invalid nested structure 1 rejected before transaction",
+    "T03 invalid nested structure 2 rejected before transaction",
+    "T03 invalid nested structure 3 rejected before transaction",
+    "T03 invalid nested structure 4 rejected before transaction",
+    "T03 invalid nested structure 5 rejected before transaction",
+    "T03 invalid nested structure 6 rejected before transaction",
+    "T03 invalid nested structure 7 rejected before transaction",
+    "T03 empty lists and unnormalized nonempty names remain valid",
+    "T03 malformed structure takes precedence over missing parent",
+    "T04 creation sort preserves sibling and team scope (null)",
+    "T04 creation sort preserves sibling and team scope (parent)",
+    "T05 descending similarity and ID ties within each paginated result group"
+  ]
+}

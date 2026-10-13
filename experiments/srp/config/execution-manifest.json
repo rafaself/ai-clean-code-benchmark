@@ -1,7 +1,7 @@
 {
   "study": "srp-v1",
-  "frozen_on": "2026-10-12",
-  "benchmark_execution_authorized": false,
+  "frozen_on": "2026-10-13",
+  "benchmark_execution_authorized": true,
   "upstream_repository": "https://github.com/hoppscotch/hoppscotch",
   "upstream_commit": "63273f8e599e73f0fb38c0739314e8d46b6bc83d",
   "variant_B_commit": "d40f82d14660b0f5026b8c350dea8d41d80d0dc2",
@@ -14,7 +14,7 @@
     "id": "gpt-6-sol",
     "reasoning_effort": "high",
     "snapshot_identity": null,
-    "availability_evidence": "CLI catalog only; live authentication/inference not tested"
+    "availability_evidence": "Successful isolated non-benchmark readiness probe; exposed provider model gpt-6-sol; preparation/readiness.json"
   },
   "runtime": {
     "image": "ai-clean-code-benchmark/runtime@sha256:a2807dc19b572228a7e5f3508cdb247cce755f0d4dc2ea242367a3e0f0eca88a",
@@ -45,8 +45,8 @@
   "schedule": "experiments/srp/config/schedule.json",
   "telemetry": {
     "format": "codex exec --json JSONL",
-    "tool_call_metric": "deduplicated observed action-item proxy, not exact internal invocations",
-    "usage_contract": "reported completed-turn usage; live semantics must be checked before launch",
+    "tool_call_metric": "lower-bound deduplicated observed action-item proxy; outer Code Mode wrappers absent; not exact internal invocations",
+    "usage_contract": "Completed CLI turn totals match summed provider Responses usage in readiness; cached input is included in input total",
     "files_inspected": "manual trace audit; disclose lower-bound coverage"
   },
   "local_cache": {
@@ -348,23 +348,23 @@
     "pnpm-workspace.yaml": "5b5656f5d4a773218ccbdb5e53dca1e76bc89d97852b47bd6e619a98c44642bf"
   },
   "known_unscored_upstream_failure": "packages/hoppscotch-backend/test/app.e2e-spec.ts; TS2349; retained unchanged; amendment-001",
-  "prelaunch_gate": "Non-benchmark authenticated instrumentation must verify provider transport, exposed model identity, usage semantics, and credential/environment isolation. Stop/amend before measured outcomes if invalid. No benchmark task may be used for calibration.",
+  "prelaunch_gate": "Passed bounded non-benchmark authenticated instrumentation under amendment-002; preserve protocol, fresh snapshots, credentials isolation, and artifact hashes for measured runs.",
   "artifact_sha256": {
     ".gitignore": "cb03584841fb204c4fd060d42a04093cd77e2cbc345d5e0b7ddf67b1ae82e564",
     "LICENSE": "711335d81cface1964fafb9d9659310d38ccfd71c92308ec0257f85ec585a9fb",
-    "README.md": "c20ca840ff6341ae21cdd4a6940a98949eb97a96aed243222e11caac0350e24d",
+    "README.md": "7440af893964216b0bc734965ae4e3d589005c0a4ca302f0ece06a22e5df40f6",
     "docs/evaluation-criteria.md": "1d4509d53b21aaee56ee9795bf283e88fcfe933fbd53fec2d7589ab40e0810b7",
     "docs/hypotheses.md": "756d8400d1a768995586899b3172cb23a88bea4b9cd05639a3a5d1b3fd4b866e",
     "docs/limitations.md": "85a7bfe44c38f94a905fa6224cdaf6b45b6891c0038e47b27cac1e389283e171",
     "docs/methodology.md": "ecc7a253d871aab7b3df58c70f39359b22e62415295b03d3ac1a2107fc4bb834",
     "docs/project-selection.md": "8952e8461e635a644084732110d590de70f36bce457e00676969bda8013c7184",
     "docs/research-question.md": "1035231422e8fea981e5838832d266802e8b6e627458cdbfbc057caa1d0d0b31",
-    "experiments/srp/README.md": "2dd86130a4fef61a036d315f1ef6c63e38e2f759cd90d9ee5fbd666d436ab5f9",
+    "experiments/srp/README.md": "67b5f61745b17864f3538f4603094904d0bfc1213c6f9ff07ec17da5d1343ef0",
     "experiments/srp/config/AGENTS.md": "8f1c1604900e344f0ce54a061f10f63160da1c99df5e9d5417a122fb2b23c8db",
     "experiments/srp/config/Dockerfile": "3e9aac73a832472cccd214a22d2b4ac1026b1408d90ed2959870ecac00d002dd",
     "experiments/srp/config/SECCOMP-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "experiments/srp/config/agent-runtime.env": "21f0de03f199673eac3254f2a47f5cf23aa21dbb76a10c7861f047a0e30f7595",
-    "experiments/srp/config/codex.toml": "9ebb0bb0e07134fc76a5d5af66a32a6e3f7bb080b402c1249c28035182352907",
+    "experiments/srp/config/codex.toml": "de17ab5e369887f8b607dbfd632b3ab4d47791f156a1cf3646ed94e249b71ec6",
     "experiments/srp/config/compose.yaml": "8205bcb92754325af2aa95eb406889979785f5d053fe1ddb1b35fd869e2dbc14",
     "experiments/srp/config/model-catalog.json": "e454149655badbbe0a9b5176a841283663c137f139eb01fe83c9a0efa851be40",
     "experiments/srp/config/runtime.env": "6c0ba40ef452749f670ac5b89f023a6b72d16e09951d7aa05014e86bd3d71443",
@@ -390,9 +390,26 @@
     "experiments/srp/tools/model-gateway.test.cjs": "739de5e998d9a05ba3eae6385c7a5843e0c15ba29b6535ed7bd552be2a0daa7d",
     "experiments/srp/tools/prepare.py": "2678d8198a64bc3f653e89c3fce2658c112d64dfbd257283711c26fbe7775b0e",
     "experiments/srp/tools/session-driver.cjs": "1c521bcf4bed02e68cff78a53a8730c074c1c04a51678447698703116e654e36",
-    "experiments/srp/tools/telemetry.py": "cb00c41d38b293802c6ee4f1edfab1f3aa56abebe33dbf3cffe6f7f811e96c39",
-    "experiments/srp/tools/test_telemetry.py": "eb68a8b04252b61c7b9d5cb38ca120f9961fbabaead07baafc16b1590b30ca24",
+    "experiments/srp/tools/telemetry.py": "fb4e4446a2e9807f2b579c6ca63bd7ead36ef741193062f63f9af0918fb9efaf",
+    "experiments/srp/tools/test_telemetry.py": "c59e784a566a1f7b4941cfca128af1b2fd206c35b2486e82243236c093b60a73",
     "experiments/srp/tools/verify.py": "11e177b8cd5c406193a5b59c15bde877d41de84f2a04d740511697970bdcfd08",
-    ".gitattributes": "fbfd189c6d62f3475c1d4372c47cd6add10d7eb9c5f747449b7c5edbd32d1a47"
+    ".gitattributes": "fbfd189c6d62f3475c1d4372c47cd6add10d7eb9c5f747449b7c5edbd32d1a47",
+    "experiments/srp/preparation/execution-manifest-v1.json": "b4e3be7179da8b2681eac804b66794d3cb5a39a70c8d80955668ff956cd257d2",
+    "experiments/srp/preparation/readiness.json": "5069640afd668cfb55407a2902b2ad07db0308cc16bbd6a4890576d70f577e78",
+    "experiments/srp/preparation/amendment-002.md": "db33adcebcdcb7f9b4404dca32c8ae10063850f677d2c0705166b30c27f222a1",
+    "experiments/srp/execution.md": "0ae32e64a1c06545671df7f34e6610f2d151ae20b2e11225fff62cee937df565",
+    "experiments/srp/preparation/required-test-identities.json": "0584f56e1f490c36850b8483367ebaed418b0f53337c9a7656271ac93f00f9f4",
+    "experiments/srp/tools/score.py": "30fc4f8f7c5826fc88f21d336245c6d9a655ffb8cd49461b3c3ed71ac15e9092",
+    "experiments/srp/tools/test_score.py": "4fb34bae1a99a5555c606bfc8dadc0d22610878be698468e453a811f69f3a340",
+    "experiments/srp/tools/serial-runner.py": "ad61e8f41d4c5d70d18c6f6edacb6bacea742f217e4d5f65b149fdce4778145a"
+  },
+  "protocol_revision": "srp-v1-amendment-002",
+  "authorization_evidence": "User: Proceed with next steps, following readiness -> frozen 30-session schedule -> grading -> findings; 2026-10-12 America/Sao_Paulo",
+  "serial_runner": {
+    "path": "experiments/srp/tools/serial-runner.py",
+    "sha256": "ad61e8f41d4c5d70d18c6f6edacb6bacea742f217e4d5f65b149fdce4778145a",
+    "launch_requires": "explicit authorization switch, private auth path, new ignored output, exact reviewed script digest",
+    "default": "no services or inference",
+    "grade_outputs": "host-captured JSON stdout; readonly tests; post-build source integrity"
   }
 }

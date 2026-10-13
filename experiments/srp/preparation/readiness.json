@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-13",
+  "phase": "non-benchmark readiness; excluded from measured outcomes",
+  "probe_ids": [
+    "readiness-001",
+    "readiness-002"
+  ],
+  "initial_probe_issue": "code_mode_host=false blocked all command tools; temporary metadata logger also targeted a readonly mount, corrected only in probe instrumentation",
+  "successful_probe": {
+    "id": "readiness-002",
+    "model": "gpt-6-sol",
+    "reasoning": "high",
+    "upstream_http_statuses": [
+      200
+    ],
+    "all_provider_models_match": true,
+    "all_request_efforts_match": true,
+    "common_instructions_observed": true,
+    "scratch_write_read_delete": true,
+    "shell_credentials_absent": true,
+    "control_and_driver_home_reads_denied": true,
+    "proc_unavailable": true,
+    "external_https_blocked": true,
+    "prisma_select_1": true,
+    "termination": {
+      "code": 0,
+      "signal": null,
+      "timed_out": false,
+      "agent_budget_seconds": 1800,
+      "elapsed_seconds": 120.052357127
+    },
+    "usage": {
+      "input_tokens": 212000,
+      "cached_input_tokens": 112128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5952,
+      "reasoning_output_tokens": 3239
+    },
+    "provider_response_count": 15,
+    "provider_usage_matches_cli_totals": true,
+    "trace_sha256": "b2865e7ecb4cc5f3271c30dfad9f060660f7d53428cc24b0c7f1d2a472355880",
+    "transport_metadata_sha256": "8cc5ece067733a052309e4a2489e61c949dd28840fed1acb68f5b346426b2ba5",
+    "codex_configuration_sha256": "de17ab5e369887f8b607dbfd632b3ab4d47791f156a1cf3646ed94e249b71ec6"
+  },
+  "limits": [
+    "Readiness checks are bounded observations, not proof against arbitrary malicious escapes.",
+    "Provider model name is exposed, immutable weight snapshot remains unknown.",
+    "No task acceptance criteria or source fixes were used for calibration.",
+    "No measured maintenance session has launched at this amendment."
+  ],
+  "external_grading_preflight": {
+    "runtime": "same frozen image ID; 2 CPUs/4 GiB; no network; frozen socket environment",
+    "original_unit_tests_passed": 761,
+    "original_unit_suites_passed": 19,
+    "unit_duration_seconds": 89.269,
+    "backend_build_passed": true,
+    "regressions_passed": 13,
+    "unmet_T05_cases_failed": 1,
+    "classification": "non-model software preflight, excluded from benchmark outcomes",
+    "readonly_oracle_regressions_passed": 13,
+    "readonly_original_unit_tests_passed": 761,
+    "host_captured_unit_stdout_valid_json": true,
+    "full_serial_grader_baseline_elapsed_seconds": 117.948,
+    "corrected_full_pipeline": {
+      "elapsed_seconds": 55.564,
+      "status": "graded",
+      "readonly_oracle_regressions_passed": 13,
+      "expected_task_failures": 1,
+      "original_unit_tests_passed": 761,
+      "build_exit": 0,
+      "post_build_integrity_passed": true,
+      "host_captured_reports": true,
+      "driver_deadline_test": "expired deadline rejected; timed host command killed within2seconds"
+    }
+  }
+}

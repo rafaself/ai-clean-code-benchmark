@@ -2,7 +2,7 @@
 
 An exploratory research project investigating whether established software engineering practices help AI coding agents maintain existing software. The initial study evaluates the Single Responsibility Principle (SRP) using OpenAI Codex. Benefits, costs, and no improvement are all possible outcomes.
 
-**Status: prepared locally; benchmark not executed.** The initial research foundation is followed by a frozen oracle, validated SRP patch, and execution configuration. No Codex maintenance outcomes or benchmark results exist. See the [preparation report](experiments/srp/preparation/README.md) for checks, artifacts, and the remaining live-provider readiness check.
+**Status at execution freeze: readiness passed; measured schedule authorized, not yet started.** The research foundation is followed by a frozen oracle, validated SRP patch, and execution configuration. See the [preparation report](experiments/srp/preparation/README.md), [readiness amendment](experiments/srp/preparation/amendment-002.md), and [execution procedure](experiments/srp/execution.md). Subsequent findings belong in `experiments/srp/results/`; preparation checks are not benchmark outcomes.
 
 ## Research question
 
@@ -14,7 +14,7 @@ Performance means effectiveness (correct completion without regressions), effici
 
 - Subject: [Hoppscotch](https://github.com/hoppscotch/hoppscotch), upstream commit `63273f8e599e73f0fb38c0739314e8d46b6bc83d`.
 - Experimental surface: its TypeScript/NestJS backend, centered on team collections and their collaborating components.
-- Variant A: pinned original implementation. Variant B: a future behavior-preserving separation of responsibilities.
+- Variant A: pinned original implementation. Variant B: the validated separation of responsibilities described in the preparation report.
 - Design: five independent maintenance tasks, two variants, three fresh runs per task and variant: **30 sessions, 15 per variant**.
 - Primary metric: correct task completion rate under identical acceptance tests, regression checks, and budgets.
 - Budget: 30 minutes of agent execution and 10 minutes of external grading per run.
@@ -38,13 +38,13 @@ These thresholds are exploratory practical signals, not significance tests. Five
 
 Reproducible setup, independent acceptance/regression tests, Variant B, and the execution manifest are prepared and validated locally. A/B builds and all 761 unchanged unit tests pass; their 13 independent regression cases and unmet task requirements match. The GraphQL schema and tested HTTP contracts match. A private positive control validates the acceptance oracle.
 
-The original broken e2e scaffold remains unchanged and is disclosed in [amendment 001](experiments/srp/preparation/amendment-001.md). Software validation is not benchmark evidence. Complete the live authentication/telemetry readiness check without using benchmark tasks, then run the frozen schedule only in a separately authorized execution phase. A single-session driver fails closed without its explicit execution switch.
+The original broken e2e scaffold remains unchanged and is disclosed in [amendment 001](experiments/srp/preparation/amendment-001.md). Software validation is not benchmark evidence. The live authentication/telemetry readiness check passed using a non-benchmark prompt. Amendment 002 corrects the Code Mode host setting identically for both variants, hardens grading isolation, and freezes the reviewed serial runner before measured outcomes. Execution requires explicit switches and the recorded user authorization.
 
 ## Future organization
 
 Each later experiment belongs in its own directory under `experiments/`, with its question, treatment definition, frozen protocol revision, tasks, provenance, and eventual sanitized evidence. Studies of naming, coupling, complexity, or other principles must define separate treatments rather than silently adding them to this SRP experiment. Shared metric definitions live in `docs/`; study-specific amendments must be dated and committed before their outcomes are collected.
 
-The initial Git branch is `master`. The protocol is a prospective specification, not an independently registered study or a completed execution manifest.
+The initial Git branch is `master`. The protocol and execution manifest are prospective freezes, not an independently registered study.
 
 ## License
 

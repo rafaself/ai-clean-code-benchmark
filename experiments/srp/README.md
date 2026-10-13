@@ -1,12 +1,12 @@
 # SRP exploratory experiment
 
-**Status: prepared locally; benchmark execution has not started.** The [preparation report](preparation/README.md) records the frozen oracle, validated decomposition, source patch, execution manifest, and remaining live-provider readiness check. The task contracts below remain prospective; validation counts are not agent outcomes.
+**Status at execution freeze: readiness passed; benchmark execution authorized, not yet started.** The [preparation report](preparation/README.md) records the frozen oracle, validated decomposition, source patch, execution manifest, and the original live-provider readiness gap. [Amendment 002](preparation/amendment-002.md) records the successful non-benchmark readiness check and executable harness correction. The task contracts below remain prospective; validation counts are not agent outcomes.
 
 ## Design and treatment
 
 Subject: Hoppscotch, pinned upstream SHA `63273f8e599e73f0fb38c0739314e8d46b6bc83d`. Experimental surface: the backend team-collection service and collaborating collection/request, team, Prisma, PubSub, controller/resolver, and shared-type components.
 
-Variant A retains the pinned original implementation. Variant B will separate responsibilities while preserving behavior and the existing service interface. Both use identical instructions, visible tests, hidden acceptance criteria, dependencies, schemas, runtime configuration, and budgets. See [methodology](../../docs/methodology.md) for controls and preparation gates.
+Variant A retains the pinned original implementation. Variant B separates responsibilities while preserving tested behavior and the existing service interface. Both use identical instructions, visible tests, hidden acceptance criteria, dependencies, schemas, runtime configuration, and budgets. See [methodology](../../docs/methodology.md) for controls and preparation gates.
 
 | Responsibility | Reason for change assumed by the study | Refactoring boundary |
 | --- | --- | --- |
